@@ -1,3 +1,9 @@
 body {
     background-color: aqua;
+    
+}
+
+#navtitle {
+    font-style: italic;
+    font-family: 'Pacifico', cursive;
 }
