@@ -4,12 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>This will be a website showing console game reviews</h1>
-    {% block content %}
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+    {% block styles %}
     {% endblock %}
-</body>
-</html>
+        <title>Document</title>
+    </head>
+    <body>
+        <h1 class="text-7xl">This will be a website showing console game reviews<i class="fa-solid fa-gamepad"></i></h1>
+        {% block content %}
+        {% endblock %}
+
+    <script src="https://kit.fontawesome.com/fae4e24a2e.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com/3.3.0"></script>
+    <script>
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+        fontFamily: {
+            sans: ["Roboto", "sans-serif"],
+            body: ["Roboto", "sans-serif"],
+            mono: ["ui-monospace", "monospace"],
+        },
+        },
+        corePlugins: {
+        preflight: false,
+        },
+    };
+    </script>
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"></script>
+        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+        {% block scripts %}
+        {% endblock %}
+    </body>
+    </html>
 
