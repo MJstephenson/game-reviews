@@ -111,7 +111,7 @@
           <li class="mb-4 lg:mb-0 lg:pr-6" data-te-nav-item-ref>
             <a
               class="text-danger hover:text-neutral-100 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
-              href="#"
+              href="{{ url_for('get_add_game') }}"
               data-te-nav-link-ref
               >Add Review</a
             >
@@ -156,7 +156,7 @@
           <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
             <a
               class="text-danger hover:text-neutral-100 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
-              href="#"
+              href="{{ url_for('register') }}"
               data-te-nav-link-ref
               >Register</a
             >
@@ -166,7 +166,7 @@
   </div>
 </nav>
         </header>
-        <h1 class="text-7xl">This will be a website showing console game reviews<i class="fa-solid fa-gamepad"></i></h1>
+        
         {% block content %}
         {% endblock %}
 
