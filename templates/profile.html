@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class=" lg:flex lg:flex-wrap w-full">
+
+    <!-- Left column container-->
+
+    <div class="flex lg:w-6/12 md:h-screen bg-gradient-to-r from-[#dd0707] via-black to-black">
+        <div class="px-4 py-6 text-white md:mx-6 ">
+            <h1>Welcome To Your Profile Page</h1>
+            <p class="mb-6 text-xl font-semibold">
+                You are logged in as: {{ username }}
+            </p>
+            
+               
+         
+        </div>
+    </div>
+
+     <!-- Right column container with sonic image and input fields-->
+
+    <div class="px-4 md:px-0 lg:w-6/12">
+        <div class="md:mx-6 md:p-12">
+            <!--Image and title-->
+            <div class="text-center">
+                <img class="mx-auto w-64 pt-4" src="{{ url_for('static', filename='./images/sonic-finger.webp') }}"
+                    alt="logo" />
+            </div>
+         
+            
+        </div>
+    </div>
+</section>
+
+{% endblock %}
