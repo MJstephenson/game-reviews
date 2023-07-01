@@ -1,201 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Pacifico&family=Press+Start+2P&family=Special+Elite&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css" />
-    <script src="https://kit.fontawesome.com/fae4e24a2e.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
-    {% block styles %}
-    {% endblock %}
-        <title>Document</title>
-    </head>
-    <body>
 
-        <header>
-            <!-- Main navigation container -->
-<nav
-  class="flex-no-wrap relative flex w-full items-center justify-between bg-[#000000] py-2 shadow-md shadow-black/5 dark:bg-neutral-600 dark:shadow-black/10 lg:flex-wrap lg:justify-start lg:py-4"
-  data-te-navbar-ref>
-  <div class="flex w-full flex-wrap items-center justify-between px-3">
-    <!-- Hamburger button for mobile view -->
-    <button
-      class="block border-0 bg-transparent px-2 text-danger hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 dark:text-neutral-200 lg:hidden"
-      type="button"
-      data-te-collapse-init
-      data-te-target="#navbarSupportedContent1"
-      aria-controls="navbarSupportedContent1"
-      aria-expanded="false"
-      aria-label="Toggle navigation">
-      <!-- Hamburger icon -->
-      <span class="[&>svg]:w-7">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Pacifico&family=Press+Start+2P&family=Special+Elite&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css" />
+  <script src="https://kit.fontawesome.com/fae4e24a2e.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+  {% block styles %}
+  {% endblock %}
+  <title>Document</title>
+</head>
+
+<body>
+
+  <header>
+    <!-- Main navigation container -->
+    <nav
+      class="flex-no-wrap relative flex w-full items-center justify-between bg-[#000000] py-2 shadow-md shadow-black/5 dark:bg-neutral-600 dark:shadow-black/10 lg:flex-wrap lg:justify-start lg:py-4"
+      data-te-navbar-ref>
+      <div class="flex w-full flex-wrap items-center justify-between px-3">
+        <!-- Hamburger button for mobile view -->
+        <button
+          class="block border-0 bg-transparent px-2 text-danger hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 dark:text-neutral-200 lg:hidden"
+          type="button" data-te-collapse-init data-te-target="#navbarSupportedContent1"
+          aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation">
+          <!-- Hamburger icon -->
+          <span class="[&>svg]:w-7">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-7 w-7">
+              <path fill-rule="evenodd"
+                d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
+                clip-rule="evenodd" />
+            </svg>
+          </span>
+        </button>
+
+        <!-- Collapsible navigation container -->
+        <div class="!visible hidden flex-grow basis-[100%] items-center lg:!flex lg:basis-auto"
+          id="navbarSupportedContent1" data-te-collapse-item>
+          <!-- Logo -->
+          <a class="mb-4 mr-2 mt-3 flex items-center text-neutral-900 hover:text-neutral-900 focus:text-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 lg:mb-0 lg:mt-0"
+            href="#">
+            <img src="https://tecdn.b-cdn.net/img/logo/te-transparent-noshadows.webp" class="h-10 lg:ml-6" alt=""
+              loading="lazy" />
+            <div class="flex flex-col text-neutral-100 font-bold pl-4">
+              <p class="text-2xl font-pacifico">The Ultimate Sega Master System
+              <p class="text-xl"> Game Reviewer</span> </p>
+            </div>
+
+          </a>
+          <!-- Navigation links -->
+          <ul class="list-style-none ml-auto flex flex-col pl-0 lg:flex-row mr-10 lg:text-xl" data-te-navbar-nav-ref>
+            <li class="mb-4 lg:mb-0 lg:pr-6" data-te-nav-item-ref>
+              <!-- Home -->
+              <a class="text-[#dd0707] hover:text-neutral-100 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-zinc-400"
+                href="#" data-te-nav-link-ref>Home</a>
+            </li>
+            <!-- About -->
+            <li class="mb-4 lg:mb-0 lg:pr-6" data-te-nav-item-ref>
+              <a class="text-[#dd0707] hover:text-neutral-100 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                href="#" data-te-nav-link-ref>About</a>
+            </li>
+            <!-- Reviews -->
+            <li class="mb-4 lg:mb-0 lg:pr-6" data-te-nav-item-ref>
+              <a class="text-[#dd0707] hover:text-neutral-100 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                href="#" data-te-nav-link-ref>Reviews</a>
+            </li>
+            <!-- Database -->
+            <li class="mb-4 lg:mb-0 lg:pr-6" data-te-nav-item-ref>
+              <a class="text-[#dd0707] hover:text-neutral-100 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                href="#" data-te-nav-link-ref>Database</a>
+            </li>
+            <!-- Add Review -->
+            <li class="mb-4 lg:mb-0 lg:pr-6" data-te-nav-item-ref>
+              <a class="text-[#dd0707] hover:text-neutral-100 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                href="{{ url_for('get_add_game') }}" data-te-nav-link-ref>Add Review</a>
+            </li>
+            <!-- manage reviews -->
+            <li class="mb-4 lg:mb-0 lg:pr-6" data-te-nav-item-ref>
+              <a class="text-[#dd0707] hover:text-neutral-100 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                href="#" data-te-nav-link-ref>Manage Reviews</a>
+            </li>
+            <!-- profile -->
+            <li class="mb-4 lg:mb-0 lg:pr-6" data-te-nav-item-ref>
+              <a class="text-[#dd0707] hover:text-neutral-100 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                href="#" data-te-nav-link-ref>Profile</a>
+            </li>
+            <!-- Login -->
+            <li class="mb-4 lg:mb-0 lg:pr-6" data-te-nav-item-ref>
+              <a class="text-[#dd0707] hover:text-neutral-100 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                href="{{ url_for('login') }}" data-te-nav-link-ref>Log In<i
+                  class="align-middle fa-solid fa-arrow-right-to-bracket ml-2"></i></a>
+            </li>
+            <!-- Log Out -->
+            <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+              <a class="text-[#dd0707] hover:text-neutral-100 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                href="#" data-te-nav-link-ref>Log Out<i
+                  class="align-middle fa-solid fa-arrow-right-from-bracket ml-2 "></i></a>
+            </li>
+            <!-- Register -->
+            <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+              <a class="text-[#dd0707] hover:text-neutral-100 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                href="{{ url_for('register') }}" data-te-nav-link-ref>Register</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+
+
+  {% block content %}
+  {% endblock %}
+
+
+  <!--Footer container-->
+<footer class="bg-black text-center text-white w-full">
+  <div class=" pt-6">
+    <div class="mb-6 flex justify-center mx-auto text-center">
+      <a
+        href="https://www.linkedin.com/in/mark-stephenson-fullstack/"
+        type="button"
+        target="_blank"
+        class="m-1 h-9 w-9 rounded-full border-2 border-white uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
+        data-te-ripple-init
+        data-te-ripple-color="light">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
+          class="mx-auto h-full w-4"
           fill="currentColor"
-          class="h-7 w-7">
+          viewBox="0 0 24 24">
           <path
-            fill-rule="evenodd"
-            d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
-            clip-rule="evenodd" />
+            d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
         </svg>
-      </span>
-    </button>
-
-    <!-- Collapsible navigation container -->
-    <div
-      class="!visible hidden flex-grow basis-[100%] items-center lg:!flex lg:basis-auto"
-      id="navbarSupportedContent1"
-      data-te-collapse-item>
-      <!-- Logo -->
-      <a
-        class="mb-4 mr-2 mt-3 flex items-center text-neutral-900 hover:text-neutral-900 focus:text-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 lg:mb-0 lg:mt-0"
-        href="#">
-        <img
-          src="https://tecdn.b-cdn.net/img/logo/te-transparent-noshadows.webp"
-          class="h-10 lg:ml-6"
-          alt=""
-          loading="lazy" />
-          <div class="flex flex-col text-neutral-100 font-bold pl-4">
-            <p class="text-2xl font-pacifico">The Ultimate Sega Master System
-            <p class="text-xl"> Game Reviewer</span>  </p>
-          </div>
-         
       </a>
-      <!-- Navigation links -->
-      <ul
-        class="list-style-none ml-auto flex flex-col pl-0 lg:flex-row mr-10 lg:text-xl"
-        data-te-navbar-nav-ref>
-        <li class="mb-4 lg:mb-0 lg:pr-6" data-te-nav-item-ref>
-          <!-- Home -->
-          <a
-            class="text-[#dd0707] hover:text-neutral-100 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-zinc-400"
-            href="#"
-            data-te-nav-link-ref
-            >Home</a
-          >
-        </li>
-        <!-- About -->
-        <li class="mb-4 lg:mb-0 lg:pr-6" data-te-nav-item-ref>
-          <a
-            class="text-[#dd0707] hover:text-neutral-100 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
-            href="#"
-            data-te-nav-link-ref
-            >About</a
-          >
-        </li>
-        <!-- Reviews -->
-        <li class="mb-4 lg:mb-0 lg:pr-6" data-te-nav-item-ref>
-          <a
-            class="text-[#dd0707] hover:text-neutral-100 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
-            href="#"
-            data-te-nav-link-ref
-            >Reviews</a
-          >
-        </li>
-        <!-- Database -->
-        <li class="mb-4 lg:mb-0 lg:pr-6" data-te-nav-item-ref>
-            <a
-              class="text-[#dd0707] hover:text-neutral-100 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
-              href="#"
-              data-te-nav-link-ref
-              >Database</a
-            >
-          </li>
-            <!-- Add Review -->
-          <li class="mb-4 lg:mb-0 lg:pr-6" data-te-nav-item-ref>
-            <a
-              class="text-[#dd0707] hover:text-neutral-100 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
-              href="{{ url_for('get_add_game') }}"
-              data-te-nav-link-ref
-              >Add Review</a
-            >
-          </li>
-          <!-- manage reviews -->
-          <li class="mb-4 lg:mb-0 lg:pr-6" data-te-nav-item-ref>
-            <a
-              class="text-[#dd0707] hover:text-neutral-100 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
-              href="#"
-              data-te-nav-link-ref
-              >Manage Reviews</a
-            >
-          </li>
-        <!-- profile -->
-          <li class="mb-4 lg:mb-0 lg:pr-6" data-te-nav-item-ref>
-            <a
-              class="text-[#dd0707] hover:text-neutral-100 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
-              href="#"
-              data-te-nav-link-ref
-              >Profile</a
-            >
-          </li>
-          <!-- Login -->
-          <li class="mb-4 lg:mb-0 lg:pr-6" data-te-nav-item-ref>
-            <a
-              class="text-[#dd0707] hover:text-neutral-100 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
-              href="{{ url_for('login') }}"
-              data-te-nav-link-ref
-              >Log In<i class="align-middle fa-solid fa-arrow-right-to-bracket ml-2"></i></a
-            >
-          </li>
-          <!-- Log Out -->
-          <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
-            <a
-              class="text-[#dd0707] hover:text-neutral-100 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
-              href="#"
-              data-te-nav-link-ref
-              >Log Out<i class="align-middle fa-solid fa-arrow-right-from-bracket ml-2 "></i></a
-            >
-          </li>
-          <!-- Register -->
-          <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
-            <a
-              class="text-[#dd0707] hover:text-neutral-100 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
-              href="{{ url_for('register') }}"
-              data-te-nav-link-ref
-              >Register</a
-            >
-          </li>
-      </ul>
+
+      <a
+        href="https://github.com/MJstephenson"
+        type="button"
+        target="_blank"
+        class="m-1 h-9 w-9 rounded-full border-2 border-white uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
+        data-te-ripple-init
+        data-te-ripple-color="light">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="mx-auto h-full w-4"
+          fill="currentColor"
+          viewBox="0 0 24 24">
+          <path
+            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+        </svg>
+      </a>
     </div>
   </div>
-</nav>
-        </header>
 
-        
-        
-        {% block content %}
-        {% endblock %}
+  <!--Copyright section-->
+  <div
+    class="p-4 text-center">
+    © 2023 Copyright:
+    <a class="text-white" href="https://tailwind-elements.com/"
+      >Mark Stephenson</a
+    >
+  </div>
+</footer>
 
-    <script src="https://kit.fontawesome.com/fae4e24a2e.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.tailwindcss.com/3.3.0"></script>
-    <script>
+
+  <script src="https://kit.fontawesome.com/fae4e24a2e.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.tailwindcss.com/3.3.0"></script>
+  <script>
     tailwind.config = {
-        darkMode: "class",
-        theme: {
+      darkMode: "class",
+      theme: {
         fontFamily: {
-            sans: ["Roboto", "sans-serif"],
-            body: ["Roboto", "sans-serif"],
-            mono: ["ui-monospace", "monospace"],
-            pacifico: ["Pacifico", "sans-serif"]
+          sans: ["Roboto", "sans-serif"],
+          body: ["Roboto", "sans-serif"],
+          mono: ["ui-monospace", "monospace"],
+          pacifico: ["Pacifico", "sans-serif"]
         },
-        },
-        corePlugins: {
+      },
+      corePlugins: {
         preflight: false,
-        },
+      },
     };
-    </script>
-        <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"></script>
-        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-        {% block scripts %}
-        {% endblock %}
-    </body>
-    </html>
+  </script>
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"></script>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  {% block scripts %}
+  {% endblock %}
+</body>
 
+</html>
