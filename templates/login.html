@@ -7,13 +7,12 @@
 
     <div class="flex items-center lg:w-6/12 md:h-screen bg-gradient-to-r from-[#dd0707] via-black to-black">
         <div class="px-4 py-6 text-white md:mx-6 md:">
+            
             <h4 class="mb-6 text-xl font-semibold">
-                Join us and share your thoughts
+                Log In For Account Access
             </h4>
             <p class="text-sm">
-                Register to add your own Sega Master System game reviews and have them published on our site. Once
-                registered you can access your profile to make changes to your reviews such as creating, editing and
-                deleting.
+                Log in to your account to create, read, update or delete your reviews. 
             </p>
         </div>
     </div>
@@ -27,12 +26,12 @@
                 <img class="mx-auto w-48 pt-4" src="{{ url_for('static', filename='./images/sonic-hedgehog.webp') }}"
                     alt="logo" />
                 <h4 class="mb-12 mt-1 pb-1 text-xl font-semibold">
-                    Register With The Ultimate Sega Master System Game Reviewer
+                   Log In
                 </h4>
             </div>
          
-            <form method="POST" action="{{ url_for('register') }}">
-                <p class="mb-4">Please Add A Username And Password Below:</p>
+            <form method="POST" action="{{ url_for('login') }}">
+                <p class="mb-4">Type In Your Username And Password In The Fields Below:</p>
                 <!--Username input-->
     
                 <div class="relative mb-4" data-te-input-wrapper-init>
@@ -79,16 +78,16 @@
                     <button
                         class="mb-3 inline-block w-full rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white bg-gradient-to-r from-[#dd0707] via-black to-black shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)]"
                         type="submit" data-te-ripple-init data-te-ripple-color="light">
-                        Register
+                        Login
                     </button>
                 </div>
             </form>
             <div>
-                <p>Already Registered ? <a class="text-blue-500 hover:underline" href="{{ url_for('login') }}">Log In</a></p>
+                <p>Dont Have an Account? <a class="text-blue-500 hover:underline" href="{{ url_for('register') }}">Click Here To Register</a></p>
             </div>
         </div>
-        
     </div>
+   
 </section>
 
 {% endblock %}
