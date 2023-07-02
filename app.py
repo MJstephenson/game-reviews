@@ -123,7 +123,8 @@ def database():
 
 @app.route("/reviews")
 def reviews():
-    return render_template("reviews.html")
+    add_game = mongo.db.add_game.find()
+    return render_template("reviews.html", add_game=add_game)
 
 
 if __name__ == "__main__":
