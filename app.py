@@ -121,6 +121,11 @@ def database():
     return render_template("database.html")
 
 
+@app.route("/reviews")
+def reviews():
+    return render_template("reviews.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
