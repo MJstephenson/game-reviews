@@ -1,21 +1,42 @@
-
 {% extends "base.html" %}
 {% block content %}
 
-<h1 class="text-center">Sega Game Reviews</h1>
+<div class=" lg:flex lg:flex-wrap w-full">
 
-{% for games in add_game %}
-<div class="my-8 border border-gray-300 p-4 w-5/6 mx-auto hover:scale-105 shadow-xl">
-    <h2 class="text-2xl font-bold capitalize">{{ games.game_name }}</h2>
-    <p class="text-gray-500"><span>Publisher: </span>{{ games.game_publisher }}</p>
-    <p class="text-gray-500"><span>Release Date: </span>{{ games.release_date }}</p>
-    <p class="mt-4"><span>Game genre: </span>{{ games.game_genre }}</p>
-    <p class="mt-4"><span>Number of players: </span>{{ games.players }}</p>
-    <p class="mt-2"><span>Game Review: </span>{{ games.game_review }}</p>
-    <p class="mt-2"><span>Written by: </span>{{ games.written_by }}</p>
+    <!-- Left column container-->
+
+    <div class="flex lg:w-6/12 lg:h-screen bg-gradient-to-r from-[#dd0707] via-black to-black">
+        <div class="px-4 text-white md:mx-6 ">
+            <h1>Welcome To The Review Page</h1>
+            <p class="mb-6 text-xl font-semibold">
+                Here you Can See Any Game Reviews That Have Been Published
+            </p>
+        </div>
+    </div>
+
+    <!-- Right column container with sonic image and input fields-->
+
+    <div class="px-4 md:px-0 lg:w-6/12">
+        <div class="md:mx-6 md:p-12">
+            <!--Image and title-->
+            {% for games in add_game %}
+            <div class="my-8 border border-gray-300 p-4 w-5/6 mx-auto hover:scale-105 shadow-xl">
+                <h2 class="text-2xl font-bold capitalize">{{ games.game_name }}</h2>
+                <p class="text-gray-500"><span>Publisher: </span>{{ games.game_publisher }}</p>
+                <p class="text-gray-500"><span>Release Date: </span>{{ games.release_date }}</p>
+                <p class="mt-4"><span>Game genre: </span>{{ games.game_genre }}</p>
+                <p class="mt-4"><span>Number of players: </span>{{ games.players }}</p>
+                <p class="mt-2"><span>Game Review: </span>{{ games.game_review }}</p>
+                <p class="mt-2"><span>Written by: </span>{{ games.written_by }}</p>
+            </div>
+            {% endfor %}
+
+
+        </div>
+    </div>
 </div>
-{% endfor %}
+
+
+
 
 {% endblock %}
-
-
