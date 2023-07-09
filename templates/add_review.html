@@ -27,23 +27,36 @@
         <div class="w-full px-8 pt-6 pb-8 mb-4">
             <p id="testElement">This is the original text.</p>
             <h2 class="block text-gray-700 text-lg font-bold mb-2">Game Details Form</h2>
-
+            <!-- form -->
             <form action="/submit_game_info" method="post" class="mb-4">
                 <!-- Game Name -->
-                <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="gameName">Game Name:</label>
+                <div class="relative mb-3" data-te-input-wrapper-init>
                     <input
-                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                        id="gameName" type="text" name="gameName">
-                </div>
+                      type="text"
+                      name="gameName"
+                      class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                      id="gameName"
+                      placeholder="Game Name" />
+                    <label
+                      for="gameName"
+                      class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
+                      >Game Name
+                    </label>
+                  </div>
                 <!-- Publisher -->
-                <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="publisher">Publisher:</label>
+                <div class="relative mb-3" data-te-input-wrapper-init>
                     <input
-                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                        id="publisher" type="text" name="publisher">
+                      type="text"
+                      name="publisher"
+                      class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                      id="publisher"
+                      placeholder="Publisher" />
+                    <label
+                      for="publisher"
+                      class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
+                      >Publisher
+                    </label>
                 </div>
-
                 <!-- Date Picker -->
                 <div class="relative mb-3" id="datepicker-with-limits" data-te-datepicker-init
                     data-te-format="dd, mmm, yyyy" data-te-input-wrapper-init>
@@ -54,33 +67,85 @@
                         class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary">Select a date between 1986 and 1996</label>
                 </div>
                 <!-- Game Genre -->
-                <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="gameGenre">Game Genre:</label>
-                    <input
-                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                        id="gameGenre" type="text" name="gameGenre">
+                <div>
+                    <select data-te-select-init
+                    data-te-select-placeholder="Select Game Genre"
+                    data-te-select-init data-te-select-filter="true">
+                        <option value="1">Action</option>
+                        <option value="2">Adventure</option>
+                        <option value="3">Puzzle</option>
+                        <option value="4">Platformer</option>
+                        <option value="5">Role-Playing (RPG)</option>
+                        <option value="6">Shoot 'Em Up</option>
+                        <option value="7">Simulation</option>
+                        <option value="8">Sports</option>
+                        <option value="9">Strategy</option>
+                        <option value="10">Racing</option>
+                        <option value="11">Beat 'Em Up</option>
+                        <option value="12">Arcade</option>
+                        <option value="13">Fighting</option>
+                        <option value="14">Horror</option>
+                        <option value="15">Educational</option>
+                        <option value="16">Music/Rhythm</option>
+                        <option value="17">Puzzle/Strategy</option>
+                        <option value="18">Shoot 'em Up (Vertical)</option>
+                        <option value="19">Shoot 'em Up (Horizontal)</option>
+                        <option value="20">First-Person Shooter (FPS)</option>
+                        <option value="21">Third-Person Shooter (TPS)</option>
+                        <option value="22">Gun Game</option>
+                        <option value="23">Other</option>
+                    </select>
+                    <label data-te-select-label-ref>Game Genre</label>
                 </div>
+                
                 <!-- Number of players -->
-                <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="numPlayers">Number of
-                        Players:</label>
+                <div class="mb-[0.125rem] block min-h-[1.5rem] pl-[1.5rem]">
                     <input
-                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                        id="numPlayers" type="number" name="numPlayers" min="1">
-                </div>
+                      class="relative float-left -ml-[1.5rem] mr-1 mt-0.5 h-5 w-5 appearance-none rounded-full border-2 border-solid border-neutral-300 before:pointer-events-none before:absolute before:h-4 before:w-4 before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] after:absolute after:z-[1] after:block after:h-4 after:w-4 after:rounded-full after:content-[''] checked:border-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:h-[0.625rem] checked:after:w-[0.625rem] checked:after:rounded-full checked:after:border-primary checked:after:bg-primary checked:after:content-[''] checked:after:[transform:translate(-50%,-50%)] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:outline-none focus:ring-0 focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:border-primary checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] dark:border-neutral-600 dark:checked:border-primary dark:checked:after:border-primary dark:checked:after:bg-primary dark:focus:before:shadow-[0px_0px_0px_13px_rgba(255,255,255,0.4)] dark:checked:focus:border-primary dark:checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca]"
+                      type="radio"
+                      name="playerNumber"
+                      id="player1" />
+                    <label
+                      class="mt-px inline-block pl-[0.15rem] hover:cursor-pointer"
+                      for="player1">
+                      1 Player
+                    </label>
+                  </div>
+                  <div class="mb-[0.125rem] block min-h-[1.5rem] pl-[1.5rem]">
+                    <input
+                      class="relative float-left -ml-[1.5rem] mr-1 mt-0.5 h-5 w-5 appearance-none rounded-full border-2 border-solid border-neutral-300 before:pointer-events-none before:absolute before:h-4 before:w-4 before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] after:absolute after:z-[1] after:block after:h-4 after:w-4 after:rounded-full after:content-[''] checked:border-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:h-[0.625rem] checked:after:w-[0.625rem] checked:after:rounded-full checked:after:border-primary checked:after:bg-primary checked:after:content-[''] checked:after:[transform:translate(-50%,-50%)] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:outline-none focus:ring-0 focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:border-primary checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] dark:border-neutral-600 dark:checked:border-primary dark:checked:after:border-primary dark:checked:after:bg-primary dark:focus:before:shadow-[0px_0px_0px_13px_rgba(255,255,255,0.4)] dark:checked:focus:border-primary dark:checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca]"
+                      type="radio"
+                      name="playerNumber"
+                      id="player2"
+                      checked />
+                    <label
+                      class="mt-px inline-block pl-[0.15rem] hover:cursor-pointer"
+                      for="player2">
+                      2 Players
+                    </label>
+                  </div>
+                  
+                  
                 <!-- Game Review -->
-                <div class="mb-6">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="gameReview">Game Review:</label>
+                <div class="relative mb-3" data-te-input-wrapper-init>
                     <textarea
-                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                        id="gameReview" name="gameReview" rows="4"></textarea>
-                </div>
+                      class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                      id="exampleFormControlTextarea1"
+                      rows="3"
+                      placeholder="Your message"></textarea>
+                    <label
+                      for="exampleFormControlTextarea1"
+                      class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
+                      >Game Review</label
+                    >
+                  </div>
 
                 <div class="flex items-center justify-between">
                     <input
                         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                         type="submit" value="Submit">
                 </div>
+                
             </form>
         </div>
 
