@@ -1,4 +1,4 @@
-import os
+import os, json
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
@@ -7,6 +7,8 @@ from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
+
+
 
 
 app = Flask(__name__)
@@ -103,7 +105,11 @@ def logout():
 
 @app.route("/add_review")
 def add_review():
-    return render_template("add_review.html")
+    with open('data/games.json') as f:
+        games = json.load(f)
+    game_names = [game['Game'] for game in games]
+    return render_template("add_review.html", game_names=game_names)
+
 
 
 @app.route("/home")
