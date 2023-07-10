@@ -58,7 +58,9 @@
 
           </a>
           <!-- Navigation links -->
+          
           <ul class="list-style-none ml-auto flex flex-col pl-0 lg:flex-row mr-10 lg:text-xl" data-te-navbar-nav-ref>
+            {% if 'user' in session %}
             <li class="mb-4 lg:mb-0 lg:pr-6" data-te-nav-item-ref>
               <!-- Home -->
               <a class="text-[#dd0707] hover:text-neutral-100 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-zinc-400"
@@ -74,13 +76,8 @@
               <a class="text-[#dd0707] hover:text-neutral-100 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
               href="{{ url_for('reviews') }}" data-te-nav-link-ref>Reviews</a>
             </li>
-            <!-- Database -->
-            <li class="mb-4 lg:mb-0 lg:pr-6" data-te-nav-item-ref>
-              <a class="text-[#dd0707] hover:text-neutral-100 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
-              href="{{ url_for('database') }}" data-te-nav-link-ref>Database</a>
-            </li>
-            <!-- Add Review -->
-            <li class="mb-4 lg:mb-0 lg:pr-6" data-te-nav-item-ref>
+             <!-- Add Review -->
+             <li class="mb-4 lg:mb-0 lg:pr-6" data-te-nav-item-ref>
               <a class="text-[#dd0707] hover:text-neutral-100 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
                 href="{{ url_for('add_review') }}" data-te-nav-link-ref>Add Review</a>
             </li>
@@ -94,23 +91,46 @@
               <a class="text-[#dd0707] hover:text-neutral-100 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
               href="{{ url_for('profile', username=session['user']) }}" data-te-nav-link-ref>Profile</a>
             </li>
-            <!-- Login -->
-            <li class="mb-4 lg:mb-0 lg:pr-6" data-te-nav-item-ref>
-              <a class="text-[#dd0707] hover:text-neutral-100 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
-                href="{{ url_for('login') }}" data-te-nav-link-ref>Log In<i
-                  class="align-middle fa-solid fa-arrow-right-to-bracket ml-2"></i></a>
-            </li>
             <!-- Log Out -->
             <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
               <a class="text-[#dd0707] hover:text-neutral-100 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
                 href="{{ url_for('logout') }}" data-te-nav-link-ref>Log Out<i
                   class="align-middle fa-solid fa-arrow-right-from-bracket ml-2 "></i></a>
             </li>
+           
+            {% else %}
+            <li class="mb-4 lg:mb-0 lg:pr-6" data-te-nav-item-ref>
+              <!-- Home -->
+              <a class="text-[#dd0707] hover:text-neutral-100 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-zinc-400"
+              href="{{ url_for('home') }}" data-te-nav-link-ref>Home</a>
+            </li>
+            <!-- About -->
+            <li class="mb-4 lg:mb-0 lg:pr-6" data-te-nav-item-ref>
+              <a class="text-[#dd0707] hover:text-neutral-100 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+              href="{{ url_for('about') }}" data-te-nav-link-ref>About</a>
+            </li>
+             <!-- Reviews -->
+            <li class="mb-4 lg:mb-0 lg:pr-6" data-te-nav-item-ref>
+              <a class="text-[#dd0707] hover:text-neutral-100 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+              href="{{ url_for('reviews') }}" data-te-nav-link-ref>Reviews</a>
+            </li>
+            <!-- Database -->
+            <li class="mb-4 lg:mb-0 lg:pr-6" data-te-nav-item-ref>
+              <a class="text-[#dd0707] hover:text-neutral-100 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+              href="{{ url_for('database') }}" data-te-nav-link-ref>Database</a>
+            </li>
             <!-- Register -->
             <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
               <a class="text-[#dd0707] hover:text-neutral-100 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
                 href="{{ url_for('register') }}" data-te-nav-link-ref>Register</a>
             </li>
+             <!-- Login -->
+             <li class="mb-4 lg:mb-0 lg:pr-6" data-te-nav-item-ref>
+              <a class="text-[#dd0707] hover:text-neutral-100 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                href="{{ url_for('login') }}" data-te-nav-link-ref>Log In<i
+                  class="align-middle fa-solid fa-arrow-right-to-bracket ml-2"></i></a>
+            </li>
+            {% endif %}
           </ul>
         </div>
       </div>
