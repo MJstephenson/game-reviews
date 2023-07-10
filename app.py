@@ -29,7 +29,8 @@ def home():
 
 @app.route("/manage_reviews")
 def manage_reviews():
-    reviews = mongo.db.add_review.find()
+    current_user = session["user"]
+    reviews = mongo.db.add_review.find({"username": current_user}) #only show the reviews from the current active user in session
     return render_template("manage_reviews.html", reviews=reviews)
 
 
@@ -119,6 +120,7 @@ def add_review():
             'genre': request.form.get('genre'),
             'player_number': request.form.get('player_number'),
             'game_review': request.form.get('game_review'),
+            'username': session['user'], # Add the username from my current session to the database with the form
         }
         mongo.db.add_review.insert_one(review)
         flash('Review successfully added')
