@@ -5,7 +5,7 @@
 
     <!-- Left column container-->
 
-    <div class="flex lg:w-6/12 md:h-screen bg-gradient-to-r from-[#dd0707] via-black to-black">
+    <div class="flex lg:w-6/12 lg:h-screen bg-gradient-to-r from-[#dd0707] via-black to-black">
         <div class="px-4 py-6 text-white md:mx-6 ">
             <h1>Manage Your Game Reviews</h1>
             <p>You have created (__) reviews</p>
@@ -29,9 +29,9 @@
         <p class="mt-2"><span>Game Review: </span>{{ review.game_review }}</p>
     </div>
     {% else %}
-    <div class="h-screen text-center">
+    <div class="lg:h-screen text-center mb-10">
         <img src="{{ url_for('static', filename='./images/try-again.webp') }}"
-            alt="Sega Micky mouse game try again screen on a tv" class="mx-auto mt-10"
+            alt="Sega Micky mouse game try again screen on a tv" class="mx-auto mt-10 lg:px-10"
               loading="lazy" />
         <p class="text-3xl my-10">You need to add a review to be able to manage one.</p>
     </p><a href="{{ url_for('add_review') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Create New Review</a>
