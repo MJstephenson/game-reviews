@@ -5,13 +5,10 @@
 
     <!-- Left column container-->
 
-    <div class="flex items-center lg:w-6/12 md:h-screen bg-gradient-to-r from-[#dd0707] via-black to-black">
-        <div class="px-4 py-6 text-white md:mx-6 md:">
-            
-            <h4 class="mb-6 text-xl font-semibold">
-                Log In For Account Access
-            </h4>
-            <p class="text-sm">
+    <div class="flex lg:w-6/12 md:h-screen bg-gradient-to-r from-[#dd0707] via-black to-black">
+        <div class="px-4 text-white md:mx-6 ">
+            <h1>Log In For Account Access</h1>
+            <p class="mb-6 text-xl font-semibold">
                 Log in to your account to create, read, update or delete your reviews. 
             </p>
         </div>
@@ -25,12 +22,10 @@
             <div class="text-center">
                 <img class="mx-auto w-64 pt-4" src="{{ url_for('static', filename='./images/sonic-finger.webp') }}"
                     alt="logo" />
-                <h4 class="mb-12 mt-1 pb-1 text-xl font-semibold">
-                   Log In
-                </h4>
             </div>
          
-            <form method="POST" action="{{ url_for('login') }}">
+            <form method="POST" action="{{ url_for('login') }}"
+            class="mt-10">
                 <p class="mb-4">Type In Your Username And Password In The Fields Below:</p>
                 <!--Username input-->
     
