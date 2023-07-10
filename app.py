@@ -103,13 +103,19 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/add_review")
+@app.route("/add_review", methods=['GET','POST'])
 def add_review():
+    if request.method == 'POST':
+        review = {
+            'publisher': request.form.get('publisher'), 
+        }
+        mongo.db.add_review.insert_one(review)
+        flash('Review successfully added')
+        
     with open('data/games.json') as f:
         games = json.load(f)
     game_names = [game['Game'] for game in games]
     return render_template("add_review.html", game_names=game_names)
-
 
 
 @app.route("/home")
