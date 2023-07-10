@@ -22,6 +22,11 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
+@app.route("/home")
+def home():
+    return render_template("index.html")
+
+
 @app.route("/manage_reviews")
 def manage_reviews():
     add_game = mongo.db.add_game.find()
@@ -122,11 +127,6 @@ def add_review():
         games = json.load(f)
     game_names = [game['Game'] for game in games]
     return render_template("add_review.html", game_names=game_names)
-
-
-@app.route("/home")
-def home():
-    return render_template("index.html")
 
 
 @app.route("/about")
