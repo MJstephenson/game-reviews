@@ -107,7 +107,13 @@ def logout():
 def add_review():
     if request.method == 'POST':
         review = {
-            'publisher': request.form.get('publisher'), 
+            'game_name': request.form.get('game_name'),
+            'publisher': request.form.get('publisher'),
+            'developer': request.form.get('developer'),
+            'release_year': request.form.get('release_year'),
+            'genre': request.form.get('genre'),
+            'player_number': request.form.get('player_number'),
+            'game_review': request.form.get('game_review'),
         }
         mongo.db.add_review.insert_one(review)
         flash('Review successfully added')
