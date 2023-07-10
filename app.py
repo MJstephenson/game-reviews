@@ -29,8 +29,8 @@ def home():
 
 @app.route("/manage_reviews")
 def manage_reviews():
-    add_game = mongo.db.add_game.find()
-    return render_template("manage_reviews.html", add_game=add_game)
+    reviews = mongo.db.add_review.find()
+    return render_template("manage_reviews.html", reviews=reviews)
 
 
 @app.route("/register", methods=["GET", "POST"])

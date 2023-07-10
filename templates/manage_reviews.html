@@ -1,23 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h2>Find below my data from MongoDB</h2>
-    {% for games in add_game %}
-        {{games.game_name}}
-        {{games.game_publisher}}
-        {{games.game_platform}}
-        {{games.release_date}}
-        {{games.game_description}}
-        {{games.game_review}}
+
+    {% for review in reviews %}
+    <div class="my-8 border border-gray-300 p-4 w-5/6 mx-auto hover:scale-105 shadow-xl">
+        <h2 class="text-2xl font-bold capitalize">{{ review.game_name }}</h2>
+        <p class="text-gray-500"><span>Publisher: </span>{{ review.publisher }}</p>
+        <p class="text-gray-500"><span>Developer: </span>{{ review.developer }}</p>
+        <p class="text-gray-500"><span>Release Year: </span>{{ review.release_year }}</p>
+        <p class="mt-4"><span>Game genre: </span>{{ review.genre }}</p>
+        <p class="mt-4"><span>Number of players: </span>{{ review.player_number }}</p>
+        <p class="mt-2"><span>Game Review: </span>{{ review.game_review }}</p>
+    </div>
     {% endfor %}
 
-    {% for games in add_game %}
-    {{games.game_name}}
-    {{games.game_publisher}}
-    {{games.game_platform}}
-    {{games.release_date}}
-    {{games.game_description}}
-    {{games.game_review}}
-    {% endfor %}
    
   {% endblock %}
