@@ -12,6 +12,12 @@
         <p class="mt-4"><span>Number of players: </span>{{ review.player_number }}</p>
         <p class="mt-2"><span>Game Review: </span>{{ review.game_review }}</p>
     </div>
+    {% else %}
+    <div class="h-screen text-center">
+        <p>You need to add a review to be able to manage one.</p>
+    </p><a href="{{ url_for('add_review') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Create New Review</a>
+    </div>
+    
     {% endfor %}
 
    
