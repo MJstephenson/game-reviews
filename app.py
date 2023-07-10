@@ -22,10 +22,10 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-@app.route("/get_add_game")
-def get_add_game():
+@app.route("/manage_reviews")
+def manage_reviews():
     add_game = mongo.db.add_game.find()
-    return render_template("add_game.html", add_game=add_game)
+    return render_template("manage_reviews.html", add_game=add_game)
 
 
 @app.route("/register", methods=["GET", "POST"])

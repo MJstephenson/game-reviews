@@ -10,5 +10,14 @@
         {{games.game_description}}
         {{games.game_review}}
     {% endfor %}
+
+    {% for games in add_game %}
+    {{games.game_name}}
+    {{games.game_publisher}}
+    {{games.game_platform}}
+    {{games.release_date}}
+    {{games.game_description}}
+    {{games.game_review}}
+    {% endfor %}
    
   {% endblock %}
