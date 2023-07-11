@@ -70,7 +70,8 @@ def login():
             # ensure hashed password matches user input
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
-                        session["user"] = request.form.get("username").lower()
+                        session["user"] = request.form.get("username").lower() #get username
+                        session["user_id"] = str(existing_user["_id"]) # get the user id and store it in the session
                         flash("Welcome, {}".format(
                             request.form.get("username")))
                         return redirect(url_for(
@@ -103,9 +104,10 @@ def profile(username):
 
 @app.route("/logout")
 def logout():
-    # this will remove user from session cookies when they log out
+    # this will remove user and the user_id from session cookies when they log out. 
     flash("you have been logged out")
-    session.pop("user")
+    session.pop("user", None)
+    session.pop('user_id', None)
     return redirect(url_for("login"))
 
 
@@ -121,6 +123,7 @@ def add_review():
             'player_number': request.form.get('player_number'),
             'game_review': request.form.get('game_review'),
             'username': session['user'], # Add the username from my current session to the database with the form
+            'user_id': ObjectId(session['user_id']), # Add the user id from the session to the database
         }
         mongo.db.add_review.insert_one(review)
         flash('Review successfully added')
