@@ -125,10 +125,34 @@ def add_review():
         mongo.db.add_review.insert_one(review)
         flash('Review successfully added')
         
+    game_names = get_games()
+    return render_template("add_review.html", game_names=game_names)
+
+@app.route("/edit_review", methods=['GET','POST'])
+def edit_review():
+    if request.method == 'POST': # Need to get ID from Query String
+        review = {
+            'game_name': request.form.get('game_name'),
+            'publisher': request.form.get('publisher'),
+            'developer': request.form.get('developer'),
+            'release_year': request.form.get('release_year'),
+            'genre': request.form.get('genre'),
+            'player_number': request.form.get('player_number'),
+            'game_review': request.form.get('game_review'),
+            'username': session['user'], # Add the username from my current session to the database with the form
+        }
+        mongo.db.add_review.update_one(review)
+        flash('Edit completed')
+        
+    game_names = get_games()
+    return render_template("edit_review.html", game_names=game_names)
+
+
+def get_games():
     with open('data/games.json') as f:
         games = json.load(f)
     game_names = [game['Game'] for game in games]
-    return render_template("add_review.html", game_names=game_names)
+    return game_names
 
 
 @app.route("/about")
