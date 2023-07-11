@@ -182,6 +182,12 @@
                 {% endfor %}
             {% endif %}
         {% endwith %}
+
+        {% if error_message %}
+        <div class=" border border-red-500 text-center p-7">
+          <p class="text-red-500 font-bold ">{{ error_message }}</p> <!-- This will show my error message from app.py -->
+        </div>
+        {% endif %}
         </div>
 
     </div>

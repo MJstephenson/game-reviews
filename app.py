@@ -113,23 +113,34 @@ def logout():
 
 @app.route("/add_review", methods=['GET','POST'])
 def add_review():
+    error_message = None
     if request.method == 'POST':
-        review = {
-            'game_name': request.form.get('game_name'),
-            'publisher': request.form.get('publisher'),
-            'developer': request.form.get('developer'),
-            'release_year': request.form.get('release_year'),
-            'genre': request.form.get('genre'),
-            'player_number': request.form.get('player_number'),
-            'game_review': request.form.get('game_review'),
-            'username': session['user'], # Add the username from my current session to the database with the form
-            'user_id': ObjectId(session['user_id']), # Add the user id from the session to the database
-        }
-        mongo.db.add_review.insert_one(review)
-        flash('Review successfully added')
+        game_name = request.form.get('game_name') # This will get the game name 
+        user_id = ObjectId(session['user_id']) # This will get the id of the user
+
+        existing_review = mongo.db.add_review.find_one( # This code will check if a review for this game is in my database for this user
+            {'game_name': game_name, 'user_id': user_id}
+        )
+
+        if existing_review: # If a user has already made a game review show my message
+            error_message = 'Just to let you know you have already reviewed this game ! You must Really Like it !! Edit Your current one in the manage reviews page.' 
+        else:
+            review = {
+                'game_name': request.form.get('game_name'),
+                'publisher': request.form.get('publisher'),
+                'developer': request.form.get('developer'),
+                'release_year': request.form.get('release_year'),
+                'genre': request.form.get('genre'),
+                'player_number': request.form.get('player_number'),
+                'game_review': request.form.get('game_review'),
+                'username': session['user'], # Add the username from my current session to the database with the form
+                'user_id': ObjectId(session['user_id']), # Add the user id from the session to the database
+            }
+            mongo.db.add_review.insert_one(review)
+            flash('Review successfully added')
         
     game_names = get_games()
-    return render_template("add_review.html", game_names=game_names)
+    return render_template("add_review.html", game_names=game_names, error_message=error_message)
 
 @app.route("/edit_review", methods=['GET','POST'])
 def edit_review():
