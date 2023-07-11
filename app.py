@@ -29,8 +29,8 @@ def home():
 
 @app.route("/manage_reviews")
 def manage_reviews():
-    current_user = session["user"]
-    reviews = mongo.db.add_review.find({"username": current_user}) #only show the reviews from the current active user in session
+    current_user_id = ObjectId(session["user_id"]) # convert the user id back to ObjectId so that it matches the type of the id
+    reviews = mongo.db.add_review.find({"user_id": current_user_id}) #only show the reviews from the current active user in session by their id
     return render_template("manage_reviews.html", reviews=reviews)
 
 
