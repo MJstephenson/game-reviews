@@ -34,6 +34,12 @@ def manage_reviews():
     return render_template("manage_reviews.html", reviews=reviews)
 
 
+@app.route('/delete_review/<review_id>', methods=['POST'])
+def delete_review(review_id): # This will grab the ID of the review I want to delete from my database
+    mongo.db.add_review.find_one_and_delete({'_id': ObjectId(review_id)}) # This will delete the entire (one) review in my database
+    return redirect(url_for('manage_reviews'))
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
