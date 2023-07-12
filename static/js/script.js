@@ -1,5 +1,4 @@
 window.onload = function () {
-    document.getElementById("testElement").innerHTML = "JavaScript is working!";
 
     const datepickerWithLimits = document.getElementById('datepicker-with-limits');
     new Datepicker(datepickerWithLimits, {
