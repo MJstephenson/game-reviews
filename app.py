@@ -180,11 +180,6 @@ def about():
     return render_template("about.html")
 
 
-@app.route("/database")
-def database():
-    return render_template("database.html")
-
-
 @app.route("/reviews")
 def reviews():
     add_game = mongo.db.add_game.find()
