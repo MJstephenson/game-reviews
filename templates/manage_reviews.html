@@ -27,7 +27,12 @@
         <p class="mt-4"><span>Game genre: </span>{{ review.genre }}</p>
         <p class="mt-4"><span>Number of players: </span>{{ review.player_number }}</p>
         <p class="mt-2"><span>Game Review: </span>{{ review.game_review }}</p>
+
+        <form action="{{ url_for('delete_review', review_id=review._id) }}" method="post">
+            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Delete Review</button>
+        </form>
     </div>
+
     {% else %}
     <div class="lg:h-screen text-center mb-10">
         <img src="{{ url_for('static', filename='./images/try-again.webp') }}"
