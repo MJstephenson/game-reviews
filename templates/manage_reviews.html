@@ -11,50 +11,54 @@
             <p>You have created (__) reviews</p>
             <p>you have created reviews for these games:</p>
             <p class="italic pb-6 lg:py-0">Games will go here</p>
-        
+
         </div>
     </div>
 
-     <!-- Right column container for user in session reviews / else show text and link to add_review.html-->
+    <!-- Right column container for user in session reviews / else show text and link to add_review.html-->
 
     <div class="px-4 md:px-0 lg:w-6/12">
         {% for review in reviews %}
-    <div class="my-8 border border-gray-300 p-4 w-5/6 mx-auto hover:scale-105 shadow-xl">
-        <h2 class="text-2xl font-bold capitalize">{{ review.game_name }}</h2>
-        <p class="text-gray-500"><span>Publisher: </span>{{ review.publisher }}</p>
-        <p class="text-gray-500"><span>Developer: </span>{{ review.developer }}</p>
-        <p class="text-gray-500"><span>Release Year: </span>{{ review.release_year }}</p>
-        <p class="mt-4"><span>Game genre: </span>{{ review.genre }}</p>
-        <p class="mt-4"><span>Number of players: </span>{{ review.player_number }}</p>
-        <p class="mt-4 pr-2">Star rating: </>{{ review.star_rating }}</p>
-        <p class=" flex align-middle items-center">
-            {% for star in range(review.star_rating|int) %}                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="red" viewBox="0 0 24 24" stroke="yellow">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2l3.09 6.26L22 9.27l-5 4.96 1.18 6.87L12 18.77l-6.18 3.35L7 14.22l-5-4.95 6.91-1.01L12 2z" />
+        <div class="my-8 border border-gray-300 p-4 w-5/6 mx-auto hover:scale-105 shadow-xl">
+            <h2 class="text-2xl font-bold capitalize">{{ review.game_name }}</h2>
+            <p class="text-gray-500"><span>Publisher: </span>{{ review.publisher }}</p>
+            <p class="text-gray-500"><span>Developer: </span>{{ review.developer }}</p>
+            <p class="text-gray-500"><span>Release Year: </span>{{ review.release_year }}</p>
+            <p class="mt-4"><span>Game genre: </span>{{ review.genre }}</p>
+            <p class="mt-4"><span>Number of players: </span>{{ review.player_number }}</p>
+            <p class="mt-4 pr-2">Star rating: </>{{ review.star_rating }}</p>
+            <p class=" flex align-middle items-center">
+                {% for star in range(review.star_rating|int) %}
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="red" viewBox="0 0 24 24" stroke="yellow">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.96 1.18 6.87L12 18.77l-6.18 3.35L7 14.22l-5-4.95 6.91-1.01L12 2z" />
                 </svg>
-            {% endfor %}
-        <p class="mt-4"><span>Game Review: </span>{{ review.game_review }}</p>
-        <!-- I have concatenated the string with review_id so that the revew id matches the forms id for deletion-->
-        <form action="{{ url_for('delete_review', review_id=review._id) }}" method="post" id="deleteForm{{review._id}}">   
-            <button type="button" onclick="confirmDelete('{{ review.game_name }}', 'deleteForm{{review._id}}')"
-            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-10">
-                Delete Review
-            </button>
-        </form>
-    </div>
+                {% endfor %}
+            <p class="mt-4"><span>Game Review: </span>{{ review.game_review }}</p>
+            <!-- I have concatenated the string with review_id so that the revew id matches the forms id for deletion-->
+            <form action="{{ url_for('delete_review', review_id=review._id) }}" method="post"
+                id="deleteForm{{review._id}}">
+                <button type="button" onclick="confirmDelete('{{ review.game_name }}', 'deleteForm{{review._id}}')"
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-10">
+                    Delete Review
+                </button>
+            </form>
+        </div>
 
-    {% else %}
-    <div class="lg:h-screen text-center mb-10">
-        <img src="{{ url_for('static', filename='./images/try-again.webp') }}"
-            alt="Sega Micky mouse game try again screen on a tv" class="mx-auto mt-10 lg:px-10"
-              loading="lazy" />
-        <p class="text-3xl my-10 lg:px-4">You need to add a review to be able to manage one.</p>
-    </p><a href="{{ url_for('add_review') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Create New Review</a>
-    </div>
-    
-    {% endfor %}
+        {% else %}
+        <div class="lg:h-screen text-center mb-10">
+            <img src="{{ url_for('static', filename='./images/try-again.webp') }}"
+                alt="Sega Micky mouse game try again screen on a tv" class="mx-auto mt-10 lg:px-10" loading="lazy" />
+            <p class="text-3xl my-10 lg:px-4">You need to add a review to be able to manage one.</p>
+            </p><a href="{{ url_for('add_review') }}"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Create
+                New Review</a>
+        </div>
+
+        {% endfor %}
     </div>
 </div>
-    
 
-   
-  {% endblock %}
+
+
+{% endblock %}
