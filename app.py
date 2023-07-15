@@ -139,6 +139,7 @@ def add_review():
                 'genre': request.form.get('genre'),
                 'player_number': request.form.get('player_number'),
                 'game_review': request.form.get('game_review'),
+                'star_rating': request.form.get('star_rating'),
                 'username': session['user'], # Add the username from my current session to the database with the form
                 'user_id': ObjectId(session['user_id']), # Add the user id from the session to the database
             }
