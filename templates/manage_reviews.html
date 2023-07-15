@@ -26,16 +26,20 @@
         <p class="text-gray-500"><span>Release Year: </span>{{ review.release_year }}</p>
         <p class="mt-4"><span>Game genre: </span>{{ review.genre }}</p>
         <p class="mt-4"><span>Number of players: </span>{{ review.player_number }}</p>
-        <p class="mt-4"><span>Star rating: </span>{{ review.star_rating }}</p>
-        <p class="mt-2"><span>Game Review: </span>{{ review.game_review }}</p>
+        <p class="mt-4 pr-2">Star rating: </>{{ review.star_rating }}</p>
+        <p class=" flex align-middle items-center">
+            {% for star in range(review.star_rating|int) %}                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="red" viewBox="0 0 24 24" stroke="yellow">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2l3.09 6.26L22 9.27l-5 4.96 1.18 6.87L12 18.77l-6.18 3.35L7 14.22l-5-4.95 6.91-1.01L12 2z" />
+                </svg>
+            {% endfor %}
+        <p class="mt-4"><span>Game Review: </span>{{ review.game_review }}</p>
         <!-- I have concatenated the string with review_id so that the revew id matches the forms id for deletion-->
         <form action="{{ url_for('delete_review', review_id=review._id) }}" method="post" id="deleteForm{{review._id}}">   
             <button type="button" onclick="confirmDelete('{{ review.game_name }}', 'deleteForm{{review._id}}')"
-            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-10">
                 Delete Review
             </button>
         </form>
-        
     </div>
 
     {% else %}
