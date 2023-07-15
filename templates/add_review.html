@@ -22,7 +22,7 @@
         <div class="w-full px-8 pt-6 pb-8 mb-4">
             <h2 class="block text-gray-700 text-lg font-bold mb-2">Game Details Form</h2>
             <!-- form -->
-            <div action="{{url_for('add_review')}}" method="POST" class="mb-4 space-y-4">
+            <form action="{{url_for('add_review')}}" method="POST" class="mb-4 space-y-4">
                 <!-- Game Name -->
                 <div>
                     <select name="game_name" data-te-select-init
@@ -139,10 +139,9 @@
                 <!-- Star Rating -->
                   <fieldset class="flex gap-2">
                     <legend class="mb-3">Star Rating</legend>
-                    <input type="hidden" name="id" value="{{ id }}">
-                    {% for i in range(1, 11) %}
-                    <label class="flex flex-col items-center">
-                        <input type="radio" name="rating" value="{{ i }}" required>
+                    {% for i in range(1, 11) %} <!-- iterate over to produce stars and radio buttons with a value 1-10 -->
+                    <label for="star_rating" class="flex flex-col items-center">
+                        <input type="radio" name="star_rating" id="star_rating" value="{{ i }}" required>
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="red" viewBox="0 0 24 24" stroke="yellow">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2l3.09 6.26L22 9.27l-5 4.96 1.18 6.87L12 18.77l-6.18 3.35L7 14.22l-5-4.95 6.91-1.01L12 2z" />
                         </svg>
@@ -200,7 +199,7 @@
           <p class="text-red-500 font-bold ">{{ error_message }}</p> <!-- This will show my error message from app.py -->
         </div>
         {% endif %}
-        </div>
+        </>
 
     </div>
 </div>
