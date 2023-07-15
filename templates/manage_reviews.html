@@ -35,14 +35,23 @@
                 </svg>
                 {% endfor %}
             <p class="mt-4"><span>Game Review: </span>{{ review.game_review }}</p>
-            <!-- I have concatenated the string with review_id so that the revew id matches the forms id for deletion-->
-            <form action="{{ url_for('delete_review', review_id=review._id) }}" method="post"
-                id="deleteForm{{review._id}}">
-                <button type="button" onclick="confirmDelete('{{ review.game_name }}', 'deleteForm{{review._id}}')"
-                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-10">
-                    Delete Review
-                </button>
-            </form>
+            <div class="flex justify-between">
+                <form action="">
+                    <button type="button" 
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-10">
+                        Edit Review
+                    </button>
+                </form>
+                <!-- I have concatenated the string with review_id so that the revew id matches the forms id for deletion-->
+                <form action="{{ url_for('delete_review', review_id=review._id) }}" method="post"
+                    id="deleteForm{{review._id}}">
+                    <button type="button" onclick="confirmDelete('{{ review.game_name }}', 'deleteForm{{review._id}}')"
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-10">
+                        Delete Review
+                    </button>
+                </form>
+            </div>
+
         </div>
 
         {% else %}
