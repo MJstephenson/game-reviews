@@ -4,6 +4,7 @@ from flask import (
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
@@ -140,6 +141,7 @@ def add_review():
                 'player_number': request.form.get('player_number'),
                 'game_review': request.form.get('game_review'),
                 'star_rating': request.form.get('star_rating'),
+                'date': datetime.now().strftime('%Y-%m-%d'),
                 'username': session['user'], # Add the username from my current session to the database with the form
                 'user_id': ObjectId(session['user_id']), # Add the user id from the session to the database
             }
