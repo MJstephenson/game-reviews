@@ -5,19 +5,15 @@
 
     <!-- Left column container-->
 
-    <div class="flex items-center lg:w-6/12 md:h-screen bg-gradient-to-r from-[#dd0707] via-black to-black">
-        <div class="px-4 py-6 text-white md:mx-6 md:">
-            <h4 class="mb-6 text-xl font-semibold">
-                Join us and share your thoughts
-            </h4>
-            <p class="text-sm">
+    <div class="flex lg:w-6/12 md:h-screen bg-gradient-to-r from-[#dd0707] via-black to-black">
+        <div class="px-4 text-white md:mx-6 ">
+            <h1>Register and share your thoughts</h1>
+            <p class="mb-6 text-xl font-semibold">
                 Register to add your own Sega Master System game reviews and have them published on our site. Once
                 registered you can access your profile to make changes to your reviews such as creating, editing and
-                deleting.
-            </p>
+                deleting.</p>
         </div>
     </div>
-
      <!-- Right column container with sonic image and input fields-->
 
     <div class="px-4 md:px-0 lg:w-6/12">
@@ -26,9 +22,6 @@
             <div class="text-center">
                 <img class="mx-auto w-48 pt-4" src="{{ url_for('static', filename='./images/sonic-hedgehog.webp') }}"
                     alt="logo" />
-                <h4 class="mb-12 mt-1 pb-1 text-xl font-semibold">
-                    Register With The Ultimate Sega Master System Game Reviewer
-                </h4>
             </div>
          
             <form method="POST" action="{{ url_for('register') }}">
