@@ -106,14 +106,23 @@ def profile(username):
         {"username":session["user"]})["username"]
     # see how many reviews the user has in my database
     review_count = mongo.db.add_review.count_documents({"user_id": ObjectId(session['user_id'])})
-     # see how many reviews the user has in their sessin and display the game names
+    # see how many reviews the user has in their sessin and display the game names
     reviews = mongo.db.add_review.find({"user_id": ObjectId(session['user_id'])})
     game_names = [review['game_name'] for review in reviews]
+
+    if request.method == "POST":
+        new_author = request.form.get("new_author")
+        if 3 <= len(new_author) <= 30:
+            mongo.db.add_review.update_many({"user_id": ObjectId(session['user_id'])}, {'$set': {'author': new_author}})
+            flash('You have successfully updated your author name.')  # Flash my success message
+        else:
+            flash('The author name should be between 3 and 20 characters long.')  # Flash my error message
 
     if session['user']:
         return render_template("profile.html", username=username, review_count=review_count, game_names=game_names)
 
     return redirect(url_for("login"))
+
 
 
 @app.route("/logout")

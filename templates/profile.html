@@ -15,17 +15,42 @@
             <p class="mt-4">you have created reviews for these games:</p>
             <ul class="mt-2">
                 {% for game in game_names %}
-                    <li>{{ game }}</li>
+                <li>{{ game }}</li>
                 {% endfor %}
             </ul>
-        <div class="flex mt-10">
-           <a href="{{ url_for('add_review') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-8">Create New Review</a>
-           <a href="{{ url_for('manage_reviews') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Manage Reviews</a>
+            <div class="flex mt-10">
+                <a href="{{ url_for('add_review') }}"
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-8">Create
+                    New Review</a>
+                <a href="{{ url_for('manage_reviews') }}"
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Manage
+                    Reviews</a>
+            </div>
+            {% if review_count > 0 %}
+            <p class="mt-8">You can change Your Author name to display on all of your reviews:</p>
+
+            <p>(max 30 characters)</p>
+            <form method="POST" class="mt-2">
+                <label for="new_author">Change Author:</label>
+                <input class="text-black focus-blue" type="text" id="new_author" name="new_author" minlength="3"
+                    maxlength="30">
+                <input type="submit" value="Submit"
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ml-6">
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                <div class="flashes">
+                    {% for message in messages %}
+                    <div class="flash font-bold mt-6 px-2 border border-white text-xl">{{ message }}</div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                {% endwith %}
+                {% endif %}
         </div>
-        </div>
+        </form>
     </div>
 
-     <!-- Right column container with sonic image and input fields-->
+    <!-- Right column container with sonic image and input fields-->
 
     <div class="px-4 md:px-0 lg:w-6/12">
         <div class="md:mx-6 md:p-12">
@@ -34,10 +59,10 @@
                 <img class="mx-auto w-64 pt-4" src="{{ url_for('static', filename='./images/sonic-finger.webp') }}"
                     alt="logo" />
             </div>
-         
-            
+
+
         </div>
     </div>
-</section>
+    </section>
 
-{% endblock %}
+    {% endblock %}
