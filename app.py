@@ -124,6 +124,7 @@ def add_review():
     if request.method == 'POST':
         game_name = request.form.get('game_name') # This will get the game name 
         user_id = ObjectId(session['user_id']) # This will get the id of the user
+        author = request.form.get('author') # This will get the author from the form
 
         existing_review = mongo.db.add_review.find_one( # This code will check if a review for this game is in my database for this user
             {'game_name': game_name, 'user_id': user_id}
@@ -142,10 +143,17 @@ def add_review():
                 'game_review': request.form.get('game_review'),
                 'star_rating': request.form.get('star_rating'),
                 'date': datetime.now().strftime('%Y-%m-%d'),
+                'author': author,
                 'username': session['user'], # Add the username from my current session to the database with the form
                 'user_id': ObjectId(session['user_id']), # Add the user id from the session to the database
             }
             mongo.db.add_review.insert_one(review)
+
+            mongo.db.add_review.update_many( # this will update all of the users reviews tio have the same authors name
+                {'user_id': ObjectId(session['user_id'])}, 
+                {'$set': {'author': author}}
+            )
+
             flash('Review successfully added')
         
     game_names = get_games()

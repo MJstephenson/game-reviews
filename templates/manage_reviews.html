@@ -17,7 +17,7 @@
 
     <!-- Right column container for user in session reviews / else show text and link to add_review.html-->
 
-    <div class="px-4 md:px-0 lg:w-6/12 h-screen">
+    <div class="px-4 md:px-0 lg:w-6/12">
         {% for review in reviews %}
         <div class="my-8 border border-gray-300 p-4 w-5/6 mx-auto hover:scale-105 shadow-xl overflow-x-hidden overflow-wrap">
             <h2 class="text-2xl font-bold capitalize">{{ review.game_name }}</h2>
@@ -36,6 +36,7 @@
                 {% endfor %}
             <p class="mt-4"><span>Game Review: </span>{{ review.game_review }}</p>
             <p class="mt-4"><span>Date: </span>{{ review.date }}</p>
+            <p class="mt-4"><span>By: </span>{{ review.author }}</p>
             <div class="flex justify-between">
                 <form action="">
                     <button type="button" 
