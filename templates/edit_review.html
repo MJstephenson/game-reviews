@@ -20,7 +20,7 @@
         <div class="w-full px-8 pt-6 pb-8 mb-4">
             <h2 class="block text-gray-700 text-lg font-bold mb-2">Game Details Form</h2>
             <!-- form -->
-            <form action="{{url_for('edit_review', review_id=review._id)}}" method="POST" class="mb-4 space-y-4">
+            <form action="{{url_for('edit_review', review_id=review._id)}}" method="POST" class="mb-4 space-y-4 pb-10 mb-10">
                 <!-- Game Name -->
                 <div>
                     <p>Game Name: {{ review.game_name }}</p>
@@ -32,7 +32,7 @@
                     <input
                       type="text"
                       name="publisher"
-                      class=" pl-24 peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                      class=" pt-8 peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                       id="publisher"
                       placeholder="Publisher"
                       value="{{ review.publisher }}"
@@ -48,7 +48,7 @@
                     <input
                       type="text"
                       name="developer"
-                      class="pl-24 peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                      class="pt-8 peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                       id="developer"
                       placeholder="developer"
                       value="{{ review.developer }}"
@@ -65,7 +65,7 @@
                     <input type="text"
                         name="release_year"
                         id="release_year"
-                        class="pl-28 peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                        class="pt-8 peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                         placeholder="Select a date between 1986 and 1996"
                         value="{{ review.release_year }}"
                         required/>
@@ -79,11 +79,11 @@
                     data-te-select-placeholder="Select Game Genre"
                     data-te-select-init data-te-select-filter="true">
                         {% set genres = ['Action', 'Adventure', 'Puzzle', 'Platformer', 'Role-Playing (RPG)', 'Shoot \'Em Up', 'Simulation', 'Sports', 'Strategy', 'Racing', 'Beat \'Em Up', 'Arcade', 'Fighting', 'Horror', 'Educational', 'Music/Rhythm', 'Puzzle/Strategy', 'Shoot \'em Up (Vertical)', 'Shoot \'em Up (Horizontal)', 'First-Person Shooter (FPS)', 'Third-Person Shooter (TPS)', 'Gun Game', 'Other'] %}
-                        {% for genre in genres %}
-                            {% if genre == review.genre %}
+                        {% for genre in genres %} <!-- create a new variable with an array of the genres in my list and lopp over it-->
+                            {% if genre == review.genre %} <!-- if it matches show it in the dropdown as the default-->
                                 <option selected>{{ genre }}</option>
                             {% else %}
-                                <option>{{ genre }}</option>
+                                <option>{{ genre }}</option> <!-- show the other options -->
                             {% endif %}
                         {% endfor %}
                     </select>
@@ -98,7 +98,7 @@
                       name="player_number"
                       id="players1"
                       value="1"
-                      {% if review.player_number == '1' %}checked{% endif %} />
+                      {% if review.player_number == '1' %}checked{% endif %} /> <!-- check the radio button if the player number is = to 1 -->
                     <label class="mt-px inline-block pl-[0.15rem] hover:cursor-pointer" for="players1">1 Player</label>
                   </div>
                   <div class="mb-[0.125rem] block min-h-[1.5rem] pl-[1.5rem]">
@@ -108,7 +108,7 @@
                       name="player_number"
                       id="players2"
                       value="2"
-                      {% if review.player_number == '2' %}checked{% endif %} />
+                      {% if review.player_number == '2' %}checked{% endif %} /> <!-- check the radio button if the player number is = to 2 -->
                     <label class="mt-px inline-block pl-[0.15rem] hover:cursor-pointer" for="players2">2 Players</label>
                   </div>
                   
@@ -177,10 +177,11 @@
                   </div>
 
                 <!-- Submit Button -->
-               
+               <div class="mb-10">
                 <input type="submit" value="Update Review"
-                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                >
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+               </div>
+               
             </form>
             
 
