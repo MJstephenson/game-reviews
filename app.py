@@ -20,7 +20,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 
 mongo = PyMongo(app)
-
+reviews = mongo.db.reviews
 
 @app.route("/")
 @app.route("/home")
@@ -159,24 +159,43 @@ def add_review():
     game_names = get_games()
     return render_template("add_review.html", game_names=game_names, error_message=error_message)
 
-@app.route("/edit_review", methods=['GET','POST'])
-def edit_review():
-    if request.method == 'POST': # Need to get ID from Query String
-        review = {
-            'game_name': request.form.get('game_name'),
-            'publisher': request.form.get('publisher'),
-            'developer': request.form.get('developer'),
-            'release_year': request.form.get('release_year'),
-            'genre': request.form.get('genre'),
-            'player_number': request.form.get('player_number'),
-            'game_review': request.form.get('game_review'),
-            'username': session['user'], # Add the username from my current session to the database with the form
-        }
-        mongo.db.add_review.update_one(review)
-        flash('Edit completed')
-        
-    game_names = get_games()
-    return render_template("edit_review.html", game_names=game_names)
+@app.route('/edit_review/<review_id>', methods=['GET', 'POST'])
+def edit_review(review_id):
+    if request.method == 'POST': # get my form data
+        game_name = request.form.get('game_name')
+        publisher = request.form.get('publisher')
+        developer = request.form.get('developer')
+        release_year = request.form.get('release_year')
+        genre = request.form.get('genre')
+        player_number = request.form.get('player_number')
+        game_review = request.form.get('game_review')
+        star_rating = request.form.get('star_rating')
+        date = datetime.now().strftime('%Y-%m-%d')  # gets the current date
+        author = request.form.get('author')
+        username = session['user']  # gets the user from the session
+        user_id = ObjectId(session['user_id'])
+
+        mongo.db.add_review.update_one({'_id': ObjectId(review_id)}, {'$set': { # Updates the review in my database
+            'game_name': game_name,
+            'publisher': publisher,
+            'developer': developer,
+            'release_year': release_year,
+            'genre': genre,
+            'player_number': player_number,
+            'star_rating': star_rating,
+            'game_review': game_review,
+            'date': date,
+            'author': author
+        }})
+
+        return redirect(url_for('manage_reviews'))  # redirects back to my manage_reviews.html
+
+    else:
+        # Gets the requirde review to edit from my database
+        review_to_edit = mongo.db.add_review.find_one({'_id': ObjectId(review_id)})
+        return render_template('edit_review.html', review=review_to_edit)
+
+
 
 
 def get_games():
