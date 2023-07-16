@@ -12,8 +12,12 @@
                 You are logged in as: {{ username }}
             </p>
             <p>You have made {{ review_count }} review(s).</p>
-            <p>you have created reviews for these games:</p>
-            <p class="italic">Games will go here</p>
+            <p class="mt-4">you have created reviews for these games:</p>
+            <ul class="mt-2">
+                {% for game in game_names %}
+                    <li>{{ game }}</li>
+                {% endfor %}
+            </ul>
         <div class="flex mt-10">
            <a href="{{ url_for('add_review') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-8">Create New Review</a>
            <a href="{{ url_for('manage_reviews') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Manage Reviews</a>
