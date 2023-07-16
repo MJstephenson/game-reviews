@@ -56,10 +56,12 @@ def register():
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password"))
         }
-        mongo.db.users.insert_one(register)
+        # insert a new user into my mongodb and get the new user's id
+        new_user_id = mongo.db.users.insert_one(register).inserted_id
 
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
+        session["user_id"] = str(new_user_id)  # store the user_id in the apps session
         flash("Registration Successful!")
         return redirect(url_for("profile", username=session["user"]))
 
