@@ -149,6 +149,7 @@ def add_review():
         if existing_review: # If a user has already made a game review show my message
             error_message = 'Just to let you know you have already reviewed this game ! You must Really Like it !! Edit Your current one in the manage reviews page.' 
         else:
+            star_rating = int(request.form.get('star_rating'))
             review = {
                 'game_name': request.form.get('game_name'),
                 'publisher': request.form.get('publisher'),
@@ -157,7 +158,7 @@ def add_review():
                 'genre': request.form.get('genre'),
                 'player_number': request.form.get('player_number'),
                 'game_review': request.form.get('game_review'),
-                'star_rating': request.form.get('star_rating'),
+                'star_rating': star_rating,
                 'date': datetime.now().strftime('%Y-%m-%d'),
                 'author': author,
                 'username': session['user'], # Add the username from my current session to the database with the form
@@ -185,7 +186,7 @@ def edit_review(review_id):
         genre = request.form.get('genre')
         player_number = request.form.get('player_number')
         game_review = request.form.get('game_review')
-        star_rating = request.form.get('star_rating')
+        star_rating = int(request.form.get('star_rating'))
         date = datetime.now().strftime('%Y-%m-%d')  # gets the current date
         author = request.form.get('author')
         username = session['user']  # gets the user from the session
