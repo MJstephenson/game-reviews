@@ -28,9 +28,6 @@
             <p class="mt-4"><span>Game Review: </span>{{ review.game_review }}</p>
             <p class="mt-4"><span>Date: </span>{{ review.date }}</p>
             <p class="mt-4"><span>By: </span>{{ review.author }}</p>
-            <div class="flex justify-between">
-            </div>
-
         </div>
 
         {% else %}
@@ -39,8 +36,9 @@
                 alt="Sega Micky mouse game try again screen on a tv" class="mx-auto mt-10 lg:px-10" loading="lazy" />
             <p class="text-3xl my-10 lg:px-4">There are no Reviews written yet. Come back when One has been Created</p>
             <a href="{{ url_for('add_review') }}"
-                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Create
-                New Review</a>
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                CreateNew Review
+            </a>
         </div>
         {% endfor %}
     </div>
