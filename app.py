@@ -226,8 +226,8 @@ def about():
 
 @app.route("/reviews")
 def reviews():
-    add_game = mongo.db.add_game.find()
-    return render_template("reviews.html", add_game=add_game)
+    add_review = mongo.db.add_review.find()
+    return render_template("reviews.html", add_review=add_review)
 
 
 if __name__ == "__main__":

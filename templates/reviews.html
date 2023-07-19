@@ -17,22 +17,32 @@
     <!-- Right column container with sonic image and input fields-->
 
     <div class="px-4 md:px-0 lg:w-6/12">
-        <div class="md:mx-6 md:p-12">
-            <!--Image and title-->
-            {% for games in add_game %}
-            <div class="my-8 border border-gray-300 p-4 w-5/6 mx-auto hover:scale-105 shadow-xl">
-                <h2 class="text-2xl font-bold capitalize">{{ games.game_name }}</h2>
-                <p class="text-gray-500"><span>Publisher: </span>{{ games.game_publisher }}</p>
-                <p class="text-gray-500"><span>Release Date: </span>{{ games.release_date }}</p>
-                <p class="mt-4"><span>Game genre: </span>{{ games.game_genre }}</p>
-                <p class="mt-4"><span>Number of players: </span>{{ games.players }}</p>
-                <p class="mt-2"><span>Game Review: </span>{{ games.game_review }}</p>
-                <p class="mt-2"><span>Written by: </span>{{ games.written_by }}</p>
+        {% for review in add_review %}
+        <div class="my-8 border border-gray-300 p-4 w-5/6 mx-auto hover:scale-105 shadow-xl overflow-x-hidden overflow-wrap">
+            <h2 class="text-2xl font-bold capitalize">{{ review.game_name }}</h2>
+            <p class="text-gray-500"><span>Publisher: </span>{{ review.publisher }}</p>
+            <p class="text-gray-500"><span>Developer: </span>{{ review.developer }}</p>
+            <p class="text-gray-500"><span>Release Year: </span>{{ review.release_year }}</p>
+            <p class="mt-4"><span>Game genre: </span>{{ review.genre }}</p>
+            <p class="mt-4"><span>Number of players: </span>{{ review.player_number }}</p>
+            <p class="mt-4"><span>Game Review: </span>{{ review.game_review }}</p>
+            <p class="mt-4"><span>Date: </span>{{ review.date }}</p>
+            <p class="mt-4"><span>By: </span>{{ review.author }}</p>
+            <div class="flex justify-between">
             </div>
-            {% endfor %}
-
 
         </div>
+
+        {% else %}
+        <div class="lg:h-screen text-center mb-10">
+            <img src="{{ url_for('static', filename='./images/try-again.webp') }}"
+                alt="Sega Micky mouse game try again screen on a tv" class="mx-auto mt-10 lg:px-10" loading="lazy" />
+            <p class="text-3xl my-10 lg:px-4">There are no Reviews written yet. Come back when One has been Created</p>
+            <a href="{{ url_for('add_review') }}"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Create
+                New Review</a>
+        </div>
+        {% endfor %}
     </div>
 </div>
 
