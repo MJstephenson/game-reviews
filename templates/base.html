@@ -19,7 +19,7 @@
   <title>Document</title>
 </head>
 
-<body>
+<body class="font-special">
 
   <header>
     <!-- Main navigation container -->
@@ -51,19 +51,14 @@
             <img src="{{ url_for('static', filename='./images/sonic-finger.webp') }}"
             alt="logo" class="h-10 lg:ml-6"
               loading="lazy" />
-            <div class="flex flex-col text-neutral-100 font-bold pl-4">
-              <p class="text-2xl font-pacifico">The Ultimate Sega Master System
-              <p class="text-xl"> Game Reviewer</span> </p>
-            </div>
-
           </a>
           <!-- Navigation links -->
           
-          <ul class="list-style-none ml-auto flex flex-col pl-0 lg:flex-row mr-10 lg:text-xl" data-te-navbar-nav-ref>
+          <ul class="list-style-none ml-auto flex flex-col pl-0 lg:flex-row mr-10 lg:text-xl font-special" data-te-navbar-nav-ref>
             {% if 'user' in session %}
             <li class="mb-4 lg:mb-0 lg:pr-6" data-te-nav-item-ref>
               <!-- Home -->
-              <a class="text-[#dd0707] hover:text-neutral-100 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-zinc-400"
+              <a class="font-elite text-[#dd0707] hover:text-neutral-100 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-zinc-400"
               href="{{ url_for('home') }}" data-te-nav-link-ref>Home</a>
             </li>
             <!-- About -->
@@ -120,10 +115,10 @@
                 href="{{ url_for('register') }}" data-te-nav-link-ref>Register</a>
             </li>
              <!-- Login -->
-             <li class="mb-4 lg:mb-0 lg:pr-6" data-te-nav-item-ref>
-              <a class="text-[#dd0707] hover:text-neutral-100 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+             <li class="mb-4 lg:mb-0 lg:pr-6 flex align-middle" data-te-nav-item-ref>
+              <a class="flex items-center text-[#dd0707] hover:text-neutral-100 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
                 href="{{ url_for('login') }}" data-te-nav-link-ref>Log In<i
-                  class="align-middle fa-solid fa-arrow-right-to-bracket ml-2"></i></a>
+                  class="fa-solid fa-arrow-right-to-bracket ml-2"></i></a>
             </li>
             {% endif %}
           </ul>
@@ -199,7 +194,10 @@
           sans: ["Roboto", "sans-serif"],
           body: ["Roboto", "sans-serif"],
           mono: ["ui-monospace", "monospace"],
-          pacifico: ["Pacifico", "sans-serif"]
+          pacifico: ["Pacifico", "sans-serif"],
+          bungee: ["Bungee Inline", "sans-serif"],
+          special: ["Special Elite", "sans-serif"],
+          press: ["Press Start 2P", "sans-serif"],
         },
       },
       corePlugins: {
