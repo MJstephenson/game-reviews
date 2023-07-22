@@ -32,7 +32,8 @@ def home():
 def manage_reviews():
     current_user_id = ObjectId(session["user_id"]) # convert the user id back to ObjectId so that it matches the type of the id
     reviews = mongo.db.add_review.find({"user_id": current_user_id}) #only show the reviews from the current active user in session by their id
-    return render_template("manage_reviews.html", reviews=reviews)
+    review_count = mongo.db.add_review.count_documents({}) # Count documents so that I can apply differednt style classes to reviews.html depending on how many reviews are shown
+    return render_template("manage_reviews.html", reviews=reviews, review_count=review_count)
 
 
 @app.route('/delete_review/<review_id>', methods=['POST'])

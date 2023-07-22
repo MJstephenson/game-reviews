@@ -11,7 +11,7 @@
 
     <!-- Right column container for user in session reviews / else show text and link to add_review.html-->
 
-    <div class="px-4 md:px-0 lg:w-6/12">
+    <div class="px-4 md:px-0 lg:w-6/12 h-auto {% if review_count == 1 %}h-screen{% else %}h-auto{% endif %}">
         {% for review in reviews %}
         <div class="my-8 border border-gray-300 p-4 w-5/6 mx-auto hover:scale-105 shadow-xl overflow-x-hidden overflow-wrap">
             <h2 class="text-2xl font-bold capitalize">{{ review.game_name }}</h2>
@@ -48,7 +48,6 @@
                     </button>
                 </form>
             </div>
-
         </div>
 
         {% else %}
