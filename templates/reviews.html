@@ -16,7 +16,7 @@
 
     <!-- Right column container with sonic image and input fields-->
 
-    <div class="px-4 md:px-0 lg:w-6/12">
+    <div class="{% if review_count == 1 %}h-screen{% else %}h-auto{% endif %} px-4 md:px-0 lg:w-6/12 px-4 md:px-0 lg:w-6/12"> <!-- style according to number of reviews -->
         {% for review in add_review %}
         <div class="my-8 border border-gray-300 p-4 w-5/6 mx-auto hover:scale-105 shadow-xl overflow-x-hidden overflow-wrap">
             <h2 class="text-2xl font-bold capitalize">{{ review.game_name }}</h2>
@@ -52,8 +52,5 @@
         {% endfor %}
     </div>
 </div>
-
-
-
 
 {% endblock %}

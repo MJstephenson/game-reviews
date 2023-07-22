@@ -228,7 +228,8 @@ def about():
 @app.route("/reviews")
 def reviews():
     add_review = mongo.db.add_review.find()
-    return render_template("reviews.html", add_review=add_review)
+    review_count = mongo.db.add_review.count_documents({}) # Count documents so that I can apply differednt style classes to reviews.html depending on how many reviews are shown
+    return render_template("reviews.html", add_review=add_review, review_count=review_count)
 
 
 if __name__ == "__main__":
