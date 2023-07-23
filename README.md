@@ -64,46 +64,63 @@ I used different coloured buttons on different coloured backgrounds for good con
 
 ## Wireframes
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-In this section, display your wireframe screenshots using a Markdown `table`.
-
-Instructions on how to do Markdown `tables` start on line #213 on this site: https://pandao.github.io/editor.md/en.html
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
 To follow best practice, wireframes were developed for mobile, tablet, and desktop sizes.
-I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wireframes.
+I've used [Figma](https://figma.com) to design my site wireframes.
 
-### Home Page Wireframes
+<details><summary>Homepage</summary>
+<img src="documentation/wireframes/mobile/mb-homepage.png">
+<img src="documentation/wireframes/tablet/tab-homepage.png">
+<img src="documentation/wireframes/desktop/desk-homepage.png">
+</details>
 
-| Size | Screenshot |
-| --- | --- |
-| Mobile | ![screenshot](documentation/wireframes/mobile-home.png) |
-| Tablet | ![screenshot](documentation/wireframes/tablet-home.png) |
-| Desktop | ![screenshot](documentation/wireframes/desktop-home.png) |
+<details><summary>About</summary>
+<img src="documentation/wireframes/mobile/mb-homepage.png">
+<img src="documentation/wireframes/tablet/tab-homepage.png">
+<img src="documentation/wireframes/desktop/desk-homepage.png">
+</details>
 
-### About Page Wireframes
+<details><summary>Reviews</summary>
+<img src="documentation/wireframes/mobile/mb-reviews.png">
+<img src="documentation/wireframes/tablet/tab-reviews.png">
+<img src="documentation/wireframes/desktop/desk-reviews.png">
+</details>
 
-| Size | Screenshot |
-| --- | --- |
-| Mobile | ![screenshot](documentation/wireframes/mobile-about.png) |
-| Tablet | ![screenshot](documentation/wireframes/tablet-about.png) |
-| Desktop | ![screenshot](documentation/wireframes/desktop-about.png) |
+<details><summary>Register</summary>
+<img src="documentation/wireframes/mobile/mb-register.png">
+<img src="documentation/wireframes/tablet/tab-register.png">
+<img src="documentation/wireframes/desktop/desk-register.png">
+</details>
 
-### Contact Page Wireframes
+<details><summary>Login</summary>
+<img src="documentation/wireframes/mobile/mb-login.png">
+<img src="documentation/wireframes/tablet/tab-login.png">
+<img src="documentation/wireframes/desktop/desk-login.png">
+</details>
 
-| Size | Screenshot |
-| --- | --- |
-| Mobile | ![screenshot](documentation/wireframes/mobile-contact.png) |
-| Tablet | ![screenshot](documentation/wireframes/tablet-contact.png) |
-| Desktop | ![screenshot](documentation/wireframes/desktop-contact.png) |
+<details><summary>Profile</summary>
+<img src="documentation/wireframes/mobile/mb-profile.png">
+<img src="documentation/wireframes/tablet/tab-profile.png">
+<img src="documentation/wireframes/desktop/desk-profile.png">
+</details>
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
+<details><summary>Add Review</summary>
+<img src="documentation/wireframes/mobile/mb-add-review.png">
+<img src="documentation/wireframes/tablet/tab-add-review.png">
+<img src="documentation/wireframes/desktop/desk-add-review.png">
+</details>
 
-Repeat for any addition wireframe pages you have.
+<details><summary>Manage Review</summary>
+<img src="documentation/wireframes/mobile/mb-manage.png">
+<img src="documentation/wireframes/tablet/tab-manage.png">
+<img src="documentation/wireframes/desktop/desk-manage.png">
+</details>
 
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
+<details><summary>Edit Review</summary>
+<img src="documentation/wireframes/mobile/mb-edit.png">
+<img src="documentation/wireframes/tablet/tab-edit.png">
+<img src="documentation/wireframes/desktop/desk-edit.png">
+</details>
+
 
 ## Features
 
