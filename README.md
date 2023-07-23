@@ -1,130 +1,58 @@
-# GAME REVIEWS
+# SEGA MASTER SYSTEM GAME REVIEW APP
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
+This is my first backend project. I decieded to make an app that allows the user to make a review of their Sega Master System Console Games and allows them to see the reviews made by others. Once logged in the user can create, read, edit or delete their personal reviews.
+The Theme was chosen as the sega master system was the 2nd console I owned and I thought it would be fun to develop an app that would allow me to store data about what I thought of the games that I had played and share them with others. Its intended target is for anyone that would like to make a review about the Sega games they have played and would be useful to user as they can give a rating and a review for personal use or to share.
 
-In this section, you will include a few paragraphs providing an overview of your project.
-Essentially, this part is your "sales pitch".
-
-At this stage, you should have a name for your project so use it!
-Don't introduce the project as a "portfolio project" for the diploma.
-
-In this section, describe what the project hopes to accomplish, who it is intended to target, and how it will be useful to the target audience.
-
-Consider adding a mockup image using the "Am I Responsive" website.
-Here's your deployed site as an example:
-https://ui.dev/amiresponsive?url=https://game-review-milestone-3.herokuapp.com
-
-Screenshots for the README and testing should not be inside of `assets/` or `static/` image folders.
-(reminder: `assets/` and `static/` are for files used on the live site, not documentation)
-Consider adding a new folder called `documentation`, and add the amiresponsive screenshot inside of that folder.
-To add the image into your README, use this format:
-(assuming you have a new folder called `documentation` with an image called "mockup.png")
-
-![screenshot](documentation/mockup.png)
-
-Note: Markdown files (.md) should not contain HTML elements like `img`, `br`, `div`, `a`, etc, only Markdown formatting.
-Find out more about using Markdown elements here:
-https://pandao.github.io/editor.md/en.html
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
+![screenshot](documentation/images/responsive.png)
 
 ## UX
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-In this section, you will briefly explain your design processes.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
 ### Colour Scheme
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-Explain your colours and the colour scheme.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
 - `#000000` used for primary text.
-- `#E84610` used for primary highlights.
-- `#4A4A4F` used for secondary text.
-- `#009FE3` used for secondary highlights.
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
+I used [coolors.co](https://coolors.co/000000-dd0707-ffffff-3b82f6) to generate my colour palette. I decieded on the black and white colours as they matched the colour of the console.
 
-Consider adding a link and screenshot for your colour scheme using "coolors".
-https://coolors.co/generate
+![screenshot](documentation/images/pallete.png)
 
-When you add a colour to the palette, the URL is dynamically updated, making it easier for you to return back to your colour palette later if needed.
+I used different coloured buttons on different coloured backgrounds for good contrast using a colours from the palette.
 
-Example:
+![screenshot](documentation/images/red-button.png)
 
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
+![screenshot](documentation/images/red-black-button.png)
 
-I used [coolors.co](https://coolors.co/e84610-009fe3-4a4a4f-445261-d63649-e6ecf0-000000) to generate my colour palette.
+![screenshot](documentation/images/blue-button.png)
 
-![screenshot](documentation/coolors.png)
-
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-If you've used CSS `:root` variables, consider also including a code snippet here!
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-I've used CSS `:root` variables to easily update the global colour scheme by changing only one value, instead of everywhere in the CSS file.
-
-```css
-:root {
-    /* P = Primary | S = Secondary */
-    --p-text: #000000;
-    --p-highlight: #E84610;
-    --s-text: #4A4A4F;
-    --s-highlight: #009FE3;
-    --white: #FFFFFF;
-    --black: #000000;
-}
-```
 
 ### Typography
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
+- [Special Elite](https://fonts.google.com/specimen/Special+Elite) was used for the body text
 
-Explain any fonts and icon libraries used, like Google Fonts and/or Font Awesome.
+- [Bungee Inline](https://fonts.google.com/specimen/Bungee) was used for all other secondary text.
 
-Consider adding a link to each font used, and the Font Awesome site if used (or similar icon library).
+- [Font Awesome](https://fontawesome.com) icons were used throughout the site, such as the icons on the username and password fields.
 
-Example:
+- [Tailwind Elements](https://tailwind-elements.com/docs/standard/navigation/footer/) svg footer icons were provided with a footer template and then styles applied to match the theme of my app from the 'Buttons dark theme'.
 
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-- [Montserrat](https://fonts.google.com/specimen/Montserrat) was used for the primary headers and titles.
-
-- [Lato](https://fonts.google.com/specimen/Lato) was used for all other secondary text.
-
-- [Font Awesome](https://fontawesome.com) icons were used throughout the site, such as the social media icons in the footer.
 
 ## User Stories
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-In this section, list all of your user stories for the project.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
 ### New Site Users
 
-- As a new site user, I would like to ____________, so that I can ____________.
-- As a new site user, I would like to ____________, so that I can ____________.
-- As a new site user, I would like to ____________, so that I can ____________.
-- As a new site user, I would like to ____________, so that I can ____________.
-- As a new site user, I would like to ____________, so that I can ____________.
+- As a new site user, I would like to be able to register for an account with a username and password.
+- As a new site user, I would like to be able to login with my username and password, so that I can access my account.
+- As a new site user, I would like to be able to logout of my account.
+- As a new site user, I would like to be able to see my profile page, so that I can quickly see the reviews I have made.
+- As a new site user, I would like to be able to make a review/s of master system games.
+- As a new site user, I would like to be able to see my game review/s, so that I can edit them.
+- As a new site user, I would like to be able to see my game reviews/s, so that I can delete them.
+- As a new site user, I would like to be able to change my author name, so that it appears on all of my reviews.
+- As a new site user, I would like to be able to see other users reviews on the site.
 
 ### Returning Site Users
 
-- As a returning site user, I would like to ____________, so that I can ____________.
-- As a returning site user, I would like to ____________, so that I can ____________.
-- As a returning site user, I would like to ____________, so that I can ____________.
-- As a returning site user, I would like to ____________, so that I can ____________.
-- As a returning site user, I would like to ____________, so that I can ____________.
+- As a returning site user, I would like to be able to login back to my account.
+- As a returning site user, I would like to be able to see the reviews that I made the last time a was on the site.
 
 ### Site Admin
 
