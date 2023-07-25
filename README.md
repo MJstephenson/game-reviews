@@ -74,9 +74,9 @@ I've used [Figma](https://figma.com) to design my site wireframes.
 </details>
 
 <details><summary>About</summary>
-<img src="documentation/wireframes/mobile/mb-homepage.png">
-<img src="documentation/wireframes/tablet/tab-homepage.png">
-<img src="documentation/wireframes/desktop/desk-homepage.png">
+<img src="documentation/wireframes/mobile/mb-about.png">
+<img src="documentation/wireframes/tablet/tab-about.png">
+<img src="documentation/wireframes/desktop/desk-about.png">
 </details>
 
 <details><summary>Reviews</summary>
