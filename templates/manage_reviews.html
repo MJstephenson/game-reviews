@@ -2,25 +2,22 @@
 {% block content %}
 
 <div class=" lg:flex lg:flex-wrap w-full">
-
     <!-- Left column container-->
-
     <div class="flex lg:w-6/12 lg:h-auto bg-gradient-to-r from-[#dd0707] via-black to-black">
         <h1 class="font-bungee px-4 text-white md:mx-6 text-4xl sm:text-6xl my-2">Manage Your Game Reviews</h1>
     </div>
-
     <!-- Right column container for user in session reviews / else show text and link to add_review.html-->
-
     <div class="px-4 md:px-0 lg:w-6/12 h-auto {% if review_count == 1 %}h-screen{% else %}h-auto{% endif %}">
         {% for review in reviews %}
-        <div class="my-8 border border-gray-300 p-4 w-5/6 mx-auto hover:scale-105 shadow-xl overflow-x-hidden overflow-wrap">
+        <div
+            class="my-8 border border-gray-300 p-4 w-5/6 mx-auto hover:scale-105 shadow-xl overflow-x-hidden overflow-wrap">
             <h2 class="text-2xl font-bold capitalize">{{ review.game_name }}</h2>
             <p class="text-gray-500"><span>Publisher: </span>{{ review.publisher }}</p>
             <p class="text-gray-500"><span>Developer: </span>{{ review.developer }}</p>
             <p class="text-gray-500"><span>Release Year: </span>{{ review.release_year }}</p>
             <p class="mt-4"><span>Game genre: </span>{{ review.genre }}</p>
             <p class="mt-4"><span>Number of players: </span>{{ review.player_number }}</p>
-            <p class="mt-4 pr-2">Star rating: </>{{ review.star_rating }}</p>
+            <p class="mt-4 pr-2">Star rating: {{ review.star_rating }}</p>
             <p class=" flex align-middle items-center">
                 {% for star in range(review.star_rating|int) %}
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="red" viewBox="0 0 24 24" stroke="yellow">
@@ -34,11 +31,11 @@
             <p class="mt-4"><span>By: </span>{{ review.author }}</p>
             <div class="flex justify-between">
                 <form action="{{ url_for('edit_review', review_id=review._id) }}" method="get">
-                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-10">
+                    <button type="submit"
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-10">
                         Edit Review
                     </button>
                 </form>
-                
                 <!-- I have concatenated the string with review_id so that the revew id matches the forms id for deletion-->
                 <form action="{{ url_for('delete_review', review_id=review._id) }}" method="post"
                     id="deleteForm{{review._id}}">
@@ -49,7 +46,6 @@
                 </form>
             </div>
         </div>
-
         {% else %}
         <div class="lg:h-screen text-center mb-10">
             <img src="{{ url_for('static', filename='./images/try-again.webp') }}"
@@ -59,11 +55,8 @@
                 class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Create
                 New Review</a>
         </div>
-
         {% endfor %}
     </div>
 </div>
-
-
 
 {% endblock %}
