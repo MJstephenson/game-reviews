@@ -2,9 +2,7 @@
 {% block content %}
 
 <div class=" lg:flex lg:flex-wrap w-full">
-
     <!-- Left column container-->
-
     <div class="flex lg:w-6/12 lg:h-screen bg-gradient-to-r from-[#dd0707] via-black to-black">
         <div class="px-4 text-white md:mx-6 ">
             <h1 class="font-bungee text-4xl sm:text-6xl my-2">Register and share your thoughts</h1>
@@ -14,8 +12,7 @@
                 deleting.</p>
         </div>
     </div>
-     <!-- Right column container with sonic image and input fields-->
-
+    <!-- Right column container with sonic image and input fields-->
     <div class="px-4 md:px-0 lg:w-6/12">
         <div class="md:mx-6 md:p-12">
             <!--Image and title-->
@@ -23,50 +20,52 @@
                 <img class="mx-auto w-48 pt-4" src="{{ url_for('static', filename='./images/sonic-hedgehog.webp') }}"
                     alt="logo" />
             </div>
-         
             <form method="POST" action="{{ url_for('register') }}">
                 <p class="mb-4">Please Add A Username And Password Below:</p>
                 <!--Username input-->
-    
+
                 <div class="relative mb-4" data-te-input-wrapper-init>
-                    <input 
+                    <input
                         class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                        id="username" name="username" placeholder="Username" type="text" minlength="5" maxlength="16" pattern="^(?=.*[A-Z])(?=.*\d)(?!.*\s).{3,16}$" title="3-16 characters long; One uppercase; one number; No whitespaces." required/>
+                        id="username" name="username" placeholder="Username" type="text" minlength="5" maxlength="16"
+                        pattern="^(?=.*[A-Z])(?=.*\d)(?!.*\s).{3,16}$"
+                        title="3-16 characters long; One uppercase; one number; No whitespaces." required />
                     <label for="username"
                         class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary-600 peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary">Username
                     </label>
-                    <span>
+                    <div>
                         <!-- flash messages -->
                         {% with messages = get_flashed_messages() %}
-                            {% if messages %}
-                                {% for message in messages %}
-                                    <div class="absolute inset-y-0 right-10 flex items-center">
-                                        <h4 class="warning">{{ message }}</h4>
-                                    </div>
-                                {% endfor %}
-                            {% endif %}
+                        {% if messages %}
+                        {% for message in messages %}
+                        <div class="absolute inset-y-0 right-10 flex items-center">
+                            <h4 class="warning">{{ message }}</h4>
+                        </div>
+                        {% endfor %}
+                        {% endif %}
                         {% endwith %}
-                    </span>
+                    </div>
                     <!-- username icon -->
                     <span class="absolute inset-y-0 right-3 flex items-center">
                         <i class="fa-regular fa-user text-neutral-500"></i>
                     </span>
                 </div>
-        
                 <!--Password input-->
                 <div class="relative mb-4" data-te-input-wrapper-init>
                     <input type="password"
                         class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                        id="password" name="password" placeholder="Password" minlength="8" maxlength="16" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])([a-zA-Z0-9@$!%*?&]{5,16})$" title="8-16 characters long; One lowercase, one uppercase, one number and one special character; No whitespaces." required/>
+                        id="password" name="password" placeholder="Password" minlength="8" maxlength="16"
+                        pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])([a-zA-Z0-9@$!%*?&]{5,16})$"
+                        title="8-16 characters long; One lowercase, one uppercase, one number and one special character; No whitespaces."
+                        required />
                     <label for="password"
                         class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary-600 peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary">Password
                     </label>
-                <!-- username icon -->
+                    <!-- username icon -->
                     <span class="absolute inset-y-0 right-3 flex items-center">
                         <i class="fa-solid fa-lock text-neutral-500"></i>
                     </span>
                 </div>
-
                 <!--Register button-->
                 <div class="mb-6 pb-1 pt-1 text-center">
                     <button
@@ -77,11 +76,11 @@
                 </div>
             </form>
             <div class="mb-10 md:mb-0">
-                <p>Already Registered ? <a class="text-blue-500 hover:underline" href="{{ url_for('login') }}">Log In</a></p>
+                <p>Already Registered ? <a class="text-blue-500 hover:underline" href="{{ url_for('login') }}">Log
+                        In</a></p>
             </div>
         </div>
-        
     </div>
-</section>
+</div>
 
-{% endblock %}
+    {% endblock %}
