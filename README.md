@@ -191,6 +191,12 @@ I've used [Figma](https://figma.com) to design my site wireframes.
 
 ![screenshot](documentation/screenshots/review-page.png)
 
+- **An alert message is shown to confirm deletion of a review**
+
+    - This warns the user that they are about to delete their review and shows the game name. They can confirm or cancel. Confirming is irreversible.
+
+![screenshot](documentation/screenshots/alert.png)
+
 
 ### Future Features
 
@@ -207,6 +213,7 @@ I've used [Figma](https://figma.com) to design my site wireframes.
 - To store the star rating so that when a form/review is edited the user doesnt have to give it a star rating again
 - To store the game genre so that when a form/review is edited the user doesnt have to select a genre again.
 - To have a publish/unpublish button on the edit reviw page so that the user can deciede if they want their review to be published live.
+- To have a collection that stores deleted reviews so they could be retrieved by the sudo user if required.
 
 ## Tools & Technologies Used
 
