@@ -141,31 +141,54 @@ IMPORTANT: Remember to always include a screenshot of each individual feature!
 
 ### Existing Features
 
-- **Title for feature #1**
+- **Register As New User**
 
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+    - A new user can register on the site for an account with a username and password. The username must include 1 uppercase letter, 1 number, no whitespaces and be 8-16 characters long. The password must include 1 uppercase letter, 1 lowercase letter, 1 number, 1 special character, no whitespaces and be 8-16 characters long. The password is hashed using werkzeug for security.
 
-![screenshot](documentation/feature01.png)
+![screenshot](documentation/screenshots/register.png)
 
-- **Title for feature #2**
+- **Login**
 
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+    - A returning user can log back in using their username and password. 
 
-![screenshot](documentation/feature02.png)
+![screenshot](documentation/screenshots/register.png)
 
-- **Title for feature #3**
+- **Add Review**
 
     - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
 
 ![screenshot](documentation/feature03.png)
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
+- **Edit Review**
 
-Repeat as necessary for as many features as your site contains.
+    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
 
-Hint: the more, the merrier!
+![screenshot](documentation/screenshots/edit-button.png)
 
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
+- **Delete Review**
+
+    - The user can delete a review by clicking or pressing the delete button. This will remove it from the app and wont be shown anymore on the reviews page and the database.
+
+![screenshot](documentation/screenshots/delete-button.png)
+
+- **Number Of Reviews Listed and Game Names**
+
+    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+
+![screenshot](documentation/feature03.png)
+
+- **Star Rating**
+
+    - The site allows the user to add a star rating from 1-10 to their review by clicking a radio button.
+
+![screenshot](documentation/screenshots/star-rating.png)
+
+- **Change Review Author To Be Displayed On All Users Reviews**
+
+    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+
+![screenshot](documentation/feature03.png)
+
 
 ### Future Features
 
