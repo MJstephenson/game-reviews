@@ -1,5 +1,3 @@
-window.onload = function () {
-
     function confirmDelete (game_name, formId) { // get the game_name & formId parameters
         // show a confirm delete modal to the user to confirm deletion of their review
         const deleteReview = confirm("Are you sure you would like to delete your " + game_name + " review?")
@@ -8,4 +6,3 @@ window.onload = function () {
             document.getElementById(formId).submit();
         }
     }
-}
