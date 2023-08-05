@@ -197,6 +197,12 @@ I've used [Figma](https://figma.com) to design my site wireframes.
 
 ![screenshot](documentation/screenshots/alert.png)
 
+- **Flash message**
+
+    - This warns the user that they have already made a review for this game.
+
+![screenshot](documentation/screenshots/warning-game.png)
+
 
 ### Future Features
 
