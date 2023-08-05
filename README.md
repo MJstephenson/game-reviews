@@ -40,8 +40,8 @@ I used different coloured buttons on different coloured backgrounds for good con
 ### New Site Users
 
 - As a new site user, I would like to be able to register for an account with a username and password.
-- As a new site user, I would like to be able to login with my username and password, so that I can access my account.
-- As a new site user, I would like to be able to logout of my account.
+- As a new site user, I would like to be able to log in with my username and password, so that I can access my account.
+- As a new site user, I would like to be able to log out of my account.
 - As a new site user, I would like to be able to see my profile page, so that I can quickly see the reviews I have made.
 - As a new site user, I would like to be able to make a review/s of master system games.
 - As a new site user, I would like to be able to see my game review/s, so that I can edit them.
@@ -56,11 +56,7 @@ I used different coloured buttons on different coloured backgrounds for good con
 
 ### Site Admin
 
-- As a site administrator, I should be able to ____________, so that I can ____________.
-- As a site administrator, I should be able to ____________, so that I can ____________.
-- As a site administrator, I should be able to ____________, so that I can ____________.
-- As a site administrator, I should be able to ____________, so that I can ____________.
-- As a site administrator, I should be able to ____________, so that I can ____________.
+Please see future improvements section.
 
 ## Wireframes
 
@@ -124,20 +120,6 @@ I've used [Figma](https://figma.com) to design my site wireframes.
 
 ## Features
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-In this section, you should go over the different parts of your project,
-and describe each in a sentence or so.
-
-You will need to explain what value each of the features provides for the user,
-focusing on who this website is for, what it is that they want to achieve,
-and how your project is the best way to help them achieve these things.
-
-For some/all of your features, you may choose to reference the specific project files that implement them.
-
-IMPORTANT: Remember to always include a screenshot of each individual feature!
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
 
 ### Existing Features
 
@@ -155,9 +137,11 @@ IMPORTANT: Remember to always include a screenshot of each individual feature!
 
 - **Add Review**
 
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+    - The user can fill out the form and add a review. They can choose a game and a game genre from a dropdown and search for each in the search field.
 
-![screenshot](documentation/feature03.png)
+![screenshot](documentation/screenshots/add-review.png)
+![screenshot](documentation/screenshots/game-name.png)
+![screenshot](documentation/screenshots/game-genre.png)
 
 - **Edit Review**
 
@@ -173,9 +157,9 @@ IMPORTANT: Remember to always include a screenshot of each individual feature!
 
 - **Number Of Reviews Listed and Game Names**
 
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+    - When the user adds reviews on the profile page the number of reviews and the game names appear for the games reviews they have added.
 
-![screenshot](documentation/feature03.png)
+![screenshot](documentation/screenshots/games-added.png)
 
 - **Star Rating**
 
@@ -185,122 +169,67 @@ IMPORTANT: Remember to always include a screenshot of each individual feature!
 
 - **Change Review Author To Be Displayed On All Users Reviews**
 
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+    - On the profile page the user can change their author name which will update on all of their reviews. this will not appear if they have not added any reviews.
 
-![screenshot](documentation/feature03.png)
+![screenshot](documentation/screenshots/change-author.png)
+
+- **Display an image and a button to add a review if no reviews have been made**
+
+    - If no reviews have been made an image, text and a button linking to the add review page is visible to the user.
+
+![screenshot](documentation/screenshots/no-reviews.png)
+
+- **Pull data from reviews and show in forms when editing**
+
+    - When a user wants to edit a review the app pulls the review data into the new form so that they can edit it. Currently this feature does not pull accross star rating and game genre.
+
+![screenshot](documentation/screenshots/edit-form.png)
+
+- **Any user can read reviews that users have made**
+
+    - Reviews.html is where all current reviews in the database are rendered for anyone to read.
+
+![screenshot](documentation/screenshots/review-page.png)
 
 
 ### Future Features
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-Do you have additional ideas that you'd like to include on your project in the future?
-Fantastic! List them here!
-It's always great to have plans for future improvements!
-Consider adding any helpful links or notes to help remind you in the future, if you revisit the project in a couple years.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-- Title for future feature #1
-    - Any additional notes about this feature.
-- Title for future feature #2
-    - Any additional notes about this feature.
-- Title for future feature #3
-    - Any additional notes about this feature.
+- Sudo User
+    - To have the ability as a sudo user to create, edit or delete a review on the frontend app by logging in with sudo login and password
+- To Add Images
+    - To allow the user to add images to the reviews, or scrape images from a source like Wikipedia so that when a game name is selected the appropriate game image is displayed in the review. Or a combination of both.
+- To Stop Users From Submitting A Blank Game Name Or Game Genre
+    - To add a warning or not allow the form to be submitted if these are not selected
+- To Import The Json Data To My MongoDB Database
+	- This would futureproof any changes and keep alll data in the backend
+- To Give Each Data Set Its Own ID and Catagory Table
+	- This would allow me to make future updates once to data sets and not have to change data for each individual users review to make site wide changes. This would mean that the the app is more scalable and manageable.
+- To store the star rating so that when a form/review is edited the user doesnt have to give it a star rating again
+- To store the game genre so that when a form/review is edited the user doesnt have to select a genre again.
+- To have a publish/unpublish button on the edit reviw page so that the user can deciede if they want their review to be published live.
 
 ## Tools & Technologies Used
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-In this section, you should explain the various tools and technologies used to develop the project.
-Make sure to put a link (where applicable) to the source, and explain what each was used for.
-Some examples have been provided, but this is just a sample only, your project might've used others.
-Feel free to delete any unused items below as necessary.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
 - [HTML](https://en.wikipedia.org/wiki/HTML) used for the main site content.
 - [CSS](https://en.wikipedia.org/wiki/CSS) used for the main site design and layout.
-- [CSS :root variables](https://www.w3schools.com/css/css3_variables.asp) used for reusable styles throughout the site.
-- [CSS Flexbox](https://www.w3schools.com/css/css3_flexbox.asp) used for an enhanced responsive layout.
-- [CSS Grid](https://www.w3schools.com/css/css_grid.asp) used for an enhanced responsive layout.
 - [JavaScript](https://www.javascript.com) used for user interaction on the site.
 - [Python](https://www.python.org) used as the back-end programming language.
 - [Git](https://git-scm.com) used for version control. (`git add`, `git commit`, `git push`)
 - [GitHub](https://github.com) used for secure online code storage.
 - [GitHub Pages](https://pages.github.com) used for hosting the deployed front-end site.
 - [Gitpod](https://gitpod.io) used as a cloud-based IDE for development.
-- [Bootstrap](https://getbootstrap.com) used as the front-end CSS framework for modern responsiveness and pre-built components.
-- [Materialize](https://materializecss.com) used as the front-end CSS framework for modern responsiveness and pre-built components.
 - [Flask](https://flask.palletsprojects.com) used as the Python framework for the site.
-- [Django](https://www.djangoproject.com) used as the Python framework for the site.
 - [MongoDB](https://www.mongodb.com) used as the non-relational database management with Flask.
-- [SQLAlchemy](https://www.sqlalchemy.org) used as the relational database management with Flask.
-- [PostgreSQL](https://www.postgresql.org) used as the relational database management.
-- [ElephantSQL](https://www.elephantsql.com) used as the Postgres database.
 - [Heroku](https://www.heroku.com) used for hosting the deployed back-end site.
-- [Cloudinary](https://cloudinary.com) used for online static file storage.
-- [Stripe](https://stripe.com) used for online secure payments of ecommerce products/services.
-- [AWS S3](https://aws.amazon.com/s3) used for online static file storage.
+- [Tailwind](https://www.tailwindcss.com) used as a css framework to build the frontend.
+- [Tailwind Elements](https://www.tailwind-elements.com) Open source UI kit.
+
+
 
 ## Database Design
 
-Entity Relationship Diagrams (ERD) help to visualize database architecture before creating models.
-Understanding the relationships between different tables can save time later in the project.
+![screenshot](documentation/database/mongodb.png)
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-Using your defined models (one example below), create an ERD with the relationships identified.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-```python
-class Product(models.Model):
-    category = models.ForeignKey(
-        "Category", null=True, blank=True, on_delete=models.SET_NULL)
-    sku = models.CharField(max_length=254, null=True, blank=True)
-    name = models.CharField(max_length=254)
-    description = models.TextField()
-    has_sizes = models.BooleanField(default=False, null=True, blank=True)
-    price = models.DecimalField(max_digits=6, decimal_places=2)
-    rating = models.DecimalField(
-        max_digits=6, decimal_places=2, null=True, blank=True)
-    image_url = models.URLField(max_length=1024, null=True, blank=True)
-    image = models.ImageField(null=True, blank=True)
-
-    def __str__(self):
-        return self.name
-```
-
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-A couple recommendations for building free ERDs:
-- [Draw.io](https://draw.io)
-- [Lucidchart](https://www.lucidchart.com/pages/ER-diagram-symbols-and-meaning)
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-![screenshot](documentation/erd.png)
-
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-Using Markdown formatting to represent an example ERD table using the Product model above:
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-- Table: **Product**
-
-    | **PK** | **id** (unique) | Type | Notes |
-    | --- | --- | --- | --- |
-    | **FK** | category | ForeignKey | FK to **Category** model |
-    | | sku | CharField | |
-    | | name | CharField | |
-    | | description | TextField | |
-    | | has_sizes | BooleanField | |
-    | | price | DecimalField | |
-    | | rating | DecimalField | |
-    | | image_url | URLField | |
-    | | image | ImageField | |
 
 ## Testing
 
@@ -308,197 +237,7 @@ For all testing, please refer to the [TESTING.md](TESTING.md) file.
 
 ## Deployment
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-**IMPORTANT:**
-- ⚠️ DO NOT update the environment variables to your own! These should NOT be included in this file; just demo values! ⚠️
-- ⚠️ DO NOT update the environment variables to your own! These should NOT be included in this file; just demo values! ⚠️
-- ⚠️ DO NOT update the environment variables to your own! These should NOT be included in this file; just demo values! ⚠️
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
 The live deployed application can be found deployed on [Heroku](https://game-review-milestone-3.herokuapp.com).
-
-### ElephantSQL Database
-
-This project uses [ElephantSQL](https://www.elephantsql.com) for the PostgreSQL Database.
-
-To obtain your own Postgres Database, sign-up with your GitHub account, then follow these steps:
-- Click **Create New Instance** to start a new database.
-- Provide a name (this is commonly the name of the project: game-reviews).
-- Select the **Tiny Turtle (Free)** plan.
-- You can leave the **Tags** blank.
-- Select the **Region** and **Data Center** closest to you.
-- Once created, click on the new database name, where you can view the database URL and Password.
-
-### Amazon AWS
-
-This project uses [AWS](https://aws.amazon.com) to store media and static files online, due to the fact that Heroku doesn't persist this type of data.
-
-Once you've created an AWS account and logged-in, follow these series of steps to get your project connected.
-Make sure you're on the **AWS Management Console** page.
-
-#### S3 Bucket
-
-- Search for **S3**.
-- Create a new bucket, give it a name (matching your Heroku app name), and choose the region closest to you.
-- Uncheck **Block all public access**, and acknowledge that the bucket will be public (required for it to work on Heroku).
-- From **Object Ownership**, make sure to have **ACLs enabled**, and **Bucket owner preferred** selected.
-- From the **Properties** tab, turn on static website hosting, and type `index.html` and `error.html` in their respective fields, then click **Save**.
-- From the **Permissions** tab, paste in the following CORS configuration:
-
-	```shell
-	[
-		{
-			"AllowedHeaders": [
-				"Authorization"
-			],
-			"AllowedMethods": [
-				"GET"
-			],
-			"AllowedOrigins": [
-				"*"
-			],
-			"ExposeHeaders": []
-		}
-	]
-	```
-
-- Copy your **ARN** string.
-- From the **Bucket Policy** tab, select the **Policy Generator** link, and use the following steps:
-	- Policy Type: **S3 Bucket Policy**
-	- Effect: **Allow**
-	- Principal: `*`
-	- Actions: **GetObject**
-	- Amazon Resource Name (ARN): **paste-your-ARN-here**
-	- Click **Add Statement**
-	- Click **Generate Policy**
-	- Copy the entire Policy, and paste it into the **Bucket Policy Editor**
-
-		```shell
-		{
-			"Id": "Policy1234567890",
-			"Version": "2012-10-17",
-			"Statement": [
-				{
-					"Sid": "Stmt1234567890",
-					"Action": [
-						"s3:GetObject"
-					],
-					"Effect": "Allow",
-					"Resource": "arn:aws:s3:::your-bucket-name/*"
-					"Principal": "*",
-				}
-			]
-		}
-		```
-
-	- Before you click "Save", add `/*` to the end of the Resource key in the Bucket Policy Editor (like above).
-	- Click **Save**.
-- From the **Access Control List (ACL)** section, click "Edit" and enable **List** for **Everyone (public access)**, and accept the warning box.
-	- If the edit button is disabled, you need to change the **Object Ownership** section above to **ACLs enabled** (mentioned above).
-
-#### IAM
-
-Back on the AWS Services Menu, search for and open **IAM** (Identity and Access Management).
-Once on the IAM page, follow these steps:
-
-- From **User Groups**, click **Create New Group**.
-	- Suggested Name: `group-game-reviews` (group + the project name)
-- Tags are optional, but you must click it to get to the **review policy** page.
-- From **User Groups**, select your newly created group, and go to the **Permissions** tab.
-- Open the **Add Permissions** dropdown, and click **Attach Policies**.
-- Select the policy, then click **Add Permissions** at the bottom when finished.
-- From the **JSON** tab, select the **Import Managed Policy** link.
-	- Search for **S3**, select the `AmazonS3FullAccess` policy, and then **Import**.
-	- You'll need your ARN from the S3 Bucket copied again, which is pasted into "Resources" key on the Policy.
-
-		```shell
-		{
-			"Version": "2012-10-17",
-			"Statement": [
-				{
-					"Effect": "Allow",
-					"Action": "s3:*",
-					"Resource": [
-						"arn:aws:s3:::your-bucket-name",
-						"arn:aws:s3:::your-bucket-name/*"
-					]
-				}
-			]
-		}
-		```
-	
-	- Click **Review Policy**.
-	- Suggested Name: `policy-game-reviews` (policy + the project name)
-	- Provide a description:
-		- "Access to S3 Bucket for game-reviews static files."
-	- Click **Create Policy**.
-- From **User Groups**, click your "group-game-reviews".
-- Click **Attach Policy**.
-- Search for the policy you've just created ("policy-game-reviews") and select it, then **Attach Policy**.
-- From **User Groups**, click **Add User**.
-	- Suggested Name: `user-game-reviews` (user + the project name)
-- For "Select AWS Access Type", select **Programmatic Access**.
-- Select the group to add your new user to: `group-game-reviews`
-- Tags are optional, but you must click it to get to the **review user** page.
-- Click **Create User** once done.
-- You should see a button to **Download .csv**, so click it to save a copy on your system.
-	- **IMPORTANT**: once you pass this page, you cannot come back to download it again, so do it immediately!
-	- This contains the user's **Access key ID** and **Secret access key**.
-	- `AWS_ACCESS_KEY_ID` = **Access key ID**
-	- `AWS_SECRET_ACCESS_KEY` = **Secret access key**
-
-#### Final AWS Setup
-
-- If Heroku Config Vars has `DISABLE_COLLECTSTATIC` still, this can be removed now, so that AWS will handle the static files.
-- Back within **S3**, create a new folder called: `media`.
-- Select any existing media images for your project to prepare them for being uploaded into the new folder.
-- Under **Manage Public Permissions**, select **Grant public read access to this object(s)**.
-- No further settings are required, so click **Upload**.
-
-### Stripe API
-
-This project uses [Stripe](https://stripe.com) to handle the ecommerce payments.
-
-Once you've created a Stripe account and logged-in, follow these series of steps to get your project connected.
-
-- From your Stripe dashboard, click to expand the "Get your test API keys".
-- You'll have two keys here:
-	- `STRIPE_PUBLIC_KEY` = Publishable Key (starts with **pk**)
-	- `STRIPE_SECRET_KEY` = Secret Key (starts with **sk**)
-
-As a backup, in case users prematurely close the purchase-order page during payment, we can include Stripe Webhooks.
-
-- From your Stripe dashboard, click **Developers**, and select **Webhooks**.
-- From there, click **Add Endpoint**.
-	- `https://game-review-milestone-3.herokuapp.com/checkout/wh/`
-- Click **receive all events**.
-- Click **Add Endpoint** to complete the process.
-- You'll have a new key here:
-	- `STRIPE_WH_SECRET` = Signing Secret (Wehbook) Key (starts with **wh**)
-
-### Gmail API
-
-This project uses [Gmail](https://mail.google.com) to handle sending emails to users for account verification and purchase order confirmations.
-
-Once you've created a Gmail (Google) account and logged-in, follow these series of steps to get your project connected.
-
-- Click on the **Account Settings** (cog icon) in the top-right corner of Gmail.
-- Click on the **Accounts and Import** tab.
-- Within the section called "Change account settings", click on the link for **Other Google Account settings**.
-- From this new page, select **Security** on the left.
-- Select **2-Step Verification** to turn it on. (verify your password and account)
-- Once verified, select **Turn On** for 2FA.
-- Navigate back to the **Security** page, and you'll see a new option called **App passwords**.
-- This might prompt you once again to confirm your password and account.
-- Select **Mail** for the app type.
-- Select **Other (Custom name)** for the device type.
-	- Any custom name, such as "Django" or game-reviews
-- You'll be provided with a 16-character password (API key).
-	- Save this somewhere locally, as you cannot access this key again later!
-	- `EMAIL_HOST_PASS` = user's 16-character API key
-	- `EMAIL_HOST_USER` = user's own personal Gmail email address
 
 ### Heroku Deployment
 
@@ -512,17 +251,8 @@ Deployment steps are as follows, after account setup:
 
 | Key | Value |
 | --- | --- |
-| `AWS_ACCESS_KEY_ID` | user's own value |
-| `AWS_SECRET_ACCESS_KEY` | user's own value |
-| `DATABASE_URL` | user's own value |
-| `DISABLE_COLLECTSTATIC` | 1 (*this is temporary, and can be removed for the final deployment*) |
-| `EMAIL_HOST_PASS` | user's own value |
-| `EMAIL_HOST_USER` | user's own value |
 | `SECRET_KEY` | user's own value |
-| `STRIPE_PUBLIC_KEY` | user's own value |
-| `STRIPE_SECRET_KEY` | user's own value |
-| `STRIPE_WH_SECRET` | user's own value |
-| `USE_AWS` | True |
+
 
 Heroku needs two additional files in order to deploy properly.
 - requirements.txt
@@ -566,17 +296,8 @@ Sample `env.py` file:
 ```python
 import os
 
-os.environ.setdefault("AWS_ACCESS_KEY_ID", "user's own value")
-os.environ.setdefault("AWS_SECRET_ACCESS_KEY", "user's own value")
 os.environ.setdefault("DATABASE_URL", "user's own value")
-os.environ.setdefault("EMAIL_HOST_PASS", "user's own value")
-os.environ.setdefault("EMAIL_HOST_USER", "user's own value")
 os.environ.setdefault("SECRET_KEY", "user's own value")
-os.environ.setdefault("STRIPE_PUBLIC_KEY", "user's own value")
-os.environ.setdefault("STRIPE_SECRET_KEY", "user's own value")
-os.environ.setdefault("STRIPE_WH_SECRET", "user's own value")
-
-# local environment only (do not include these in production/deployment!)
 os.environ.setdefault("DEBUG", "True")
 ```
 
@@ -624,87 +345,40 @@ You can fork this repository by using the following steps:
 
 ### Local VS Deployment
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
+There are no differences between the local site and the live deployment site on Heroku.
 
-Use this space to discuss any differences between the local version you've developed, and the live deployment site on Heroku.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
 
 ## Credits
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-In this section you need to reference where you got your content, media, and extra help from.
-It is common practice to use code from other repositories and tutorials,
-however, it is important to be very specific about these sources to avoid plagiarism.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
 ### Content
-
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-Use this space to provide attribution links to any borrowed code snippets, elements, or resources.
-A few examples have been provided below to give you some ideas.
-
-Ideally, you should provide an actual link to every resource used, not just a generic link to the main site!
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
 
 | Source | Location | Notes |
 | --- | --- | --- |
-| [Markdown Builder](https://traveltimn.github.io/markdown-builder) | README and TESTING | tool to help generate the Markdown files |
-| [Chris Beams](https://chris.beams.io/posts/git-commit) | version control | "How to Write a Git Commit Message" |
-| [W3Schools](https://www.w3schools.com/howto/howto_js_topnav_responsive.asp) | entire site | responsive HTML/CSS/JS navbar |
-| [W3Schools](https://www.w3schools.com/howto/howto_css_modals.asp) | contact page | interactive pop-up (modal) |
-| [W3Schools](https://www.w3schools.com/css/css3_variables.asp) | entire site | how to use CSS :root variables |
-| [Flexbox Froggy](https://flexboxfroggy.com/) | entire site | modern responsive layouts |
-| [Grid Garden](https://cssgridgarden.com) | entire site | modern responsive layouts |
-| [StackOverflow](https://stackoverflow.com/a/2450976) | quiz page | Fisher-Yates/Knuth shuffle in JS |
-| [YouTube](https://www.youtube.com/watch?v=YL1F4dCUlLc) | leaderboard | using `localStorage()` in JS for high scores |
-| [YouTube](https://www.youtube.com/watch?v=u51Zjlnui4Y) | PP3 terminal | tutorial for adding color to the Python terminal |
-| [strftime](https://strftime.org) | CRUD functionality | helpful tool to format date/time from string |
-| [WhiteNoise](http://whitenoise.evans.io) | entire site | hosting static files on Heroku temporarily |
+| [Tailwind elements](https://tailwind-elements.com/docs/standard/navigation/navbar/) | navbar | responsive navbar |
+| [Tailwind Elements](https://tailwind-elements.com/docs/standard/forms/inputs/#floating) | forms | helper inputs with labels |
+| [Tailwind Elements](https://tailwind-elements.com/docs/standard/navigation/footer/) | footer | footer site wide |
+| [Geeksforgeeks](https://www.geeksforgeeks.org/read-json-file-using-python/) | import json file  | for forms |
+| [TTL255](https://ttl255.com/jinja2-tutorial-part-2-loops-and-conditionals/#:~:text=For%20loops%20start%20with%20%7B%25,we%20go%20over%20the%20elements.) | jinga inline for loops  | for applying styles inline |
+| [Elbriga14](https://github.com/Elbriga14/EveryVideoGameEver/blob/main/GamesDB/MasterSystemGames.json) | json file | master system games data |
+| [W3 Schools](https://www.w3schools.com/python/default.asp) | python resources | for python syntax and methods |
+| [Scaler Topics](https://www.scaler.com/topics/convert-string-to-int-python/) | intergers | convert string to interger |
+| [Real Python](https://realpython.com/primer-on-jinja-templating/) | Jinga Loops | for explaining jinga loops and else if statements |
+| [Codemy](https://www.youtube.com/watch?v=8ebIEefhBpM) | Werkzeug hash | for explaining wekzeug password hash |
+| [Eyehunts](https://tutorial.eyehunts.com/js/javascript-confirm-delete-before-delete-code/) | alert popup | to confirm delete |
+
 
 ### Media
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-Use this space to provide attribution links to any images, videos, or audio files borrowed from online.
-A few examples have been provided below to give you some ideas.
-
-If you're the owner (or a close acquaintance) of all media files, then make sure to specify this.
-Let the assessors know that you have explicit rights to use the media files within your project.
-
-Ideally, you should provide an actual link to every media file used, not just a generic link to the main site!
-The list below is by no means exhaustive. Within the Code Institute Slack community, you can find more "free media" links
-by sending yourself the following command: `!freemedia`.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
 | Source | Location | Type | Notes |
 | --- | --- | --- | --- |
-| [Pexels](https://www.pexels.com) | entire site | image | favicon on all pages |
-| [Lorem Picsum](https://picsum.photos) | home page | image | hero image background |
-| [Unsplash](https://unsplash.com) | product page | image | sample of fake products |
-| [Pixabay](https://pixabay.com) | gallery page | image | group of photos for gallery |
-| [Wallhere](https://wallhere.com) | footer | image | background wallpaper image in the footer |
-| [This Person Does Not Exist](https://thispersondoesnotexist.com) | testimonials | image | headshots of fake testimonial images |
-| [Audio Micro](https://www.audiomicro.com/free-sound-effects) | game page | audio | free audio files to generate the game sounds |
-| [Videvo](https://www.videvo.net/) | home page | video | background video on the hero section |
-| [TinyPNG](https://tinypng.com) | entire site | image | tool for image compression |
+| [Wikimedia commons](https://commons.wikimedia.org/wiki/File:Sega-Master-System-Controllers.jpg) | about page | image | background image |
+| [Pxfuel](https://www.pxfuel.com/en/desktop-wallpaper-julyh) | landing page | image | background image |
+| [Fav Png](https://favpng.com/png_view/sonic-the-hedgehog-photos-sonic-the-hedgehog-3-sonic-sega-all-stars-racing-sonic-the-hedgehog-2-knuckles-the-echidna-png/jVXX1q86) | Log in, profile pages | image | background images|
+| [Fav Png](https://favpng.com/png_view/sonic-the-hedgehog-2-sonic-generations-doctor-eggman-xbox-360-png/gdLEsjn5) | register page | image | background image |
+| [Retro Video Gaming](https://retro-video-gaming.com/2012/07/15/captain-silver-for-sega-master-system/) | about page | image | games image |
+| [Retro Otaku](https://www.retro-otaku.com/2009/09/gaming-sessions-24-january-2009/) | No Reviews | image | background image for no reviews |
 
 ### Acknowledgements
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
+- I would like to thank my partner Lucy, for believing in me, and allowing me to make this transition into software development.
 
-Use this space to provide attribution to any supports that helped, encouraged, or supported you throughout the development stages of this project.
-A few examples have been provided below to give you some ideas.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-- I would like to thank my Code Institute mentor, [Tim Nelson](https://github.com/TravelTimN) for their support throughout the development of this project.
-- I would like to thank the [Code Institute](https://codeinstitute.net) tutor team for their assistance with troubleshooting and debugging some project issues.
-- I would like to thank the [Code Institute Slack community](https://code-institute-room.slack.com) for the moral support; it kept me going during periods of self doubt and imposter syndrome.
-- I would like to thank my partner (John/Jane), for believing in me, and allowing me to make this transition into software development.
-- I would like to thank my employer, for supporting me in my career development change towards becoming a software developer.
