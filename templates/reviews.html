@@ -2,9 +2,7 @@
 {% block content %}
 
 <div class=" lg:flex lg:flex-wrap w-full">
-
     <!-- Left column container-->
-
     <div class="flex lg:w-6/12 lg:h-auto bg-gradient-to-r from-[#dd0707] via-black to-black">
         <div class="px-4 text-white md:mx-6 ">
             <h1 class="font-bungee text-4xl sm:text-6xl my-2">Welcome To The Review Page</h1>
@@ -13,12 +11,13 @@
             </p>
         </div>
     </div>
-
     <!-- Right column container with sonic image and input fields-->
-
-    <div class="{% if review_count == 1 %}h-screen{% else %}h-auto{% endif %} px-4 md:px-0 lg:w-6/12 px-4 md:px-0 lg:w-6/12"> <!-- style according to number of reviews -->
+    <div
+        class="{% if review_count == 1 %}h-screen{% else %}h-auto{% endif %} px-4 md:px-0 lg:w-6/12 px-4 md:px-0 lg:w-6/12">
+        <!-- style according to number of reviews -->
         {% for review in add_review %}
-        <div class="my-8 border border-gray-300 p-4 w-5/6 mx-auto hover:scale-105 shadow-xl overflow-x-hidden overflow-wrap">
+        <div
+            class="my-8 border border-gray-300 p-4 w-5/6 mx-auto hover:scale-105 shadow-xl overflow-x-hidden overflow-wrap">
             <h2 class="text-2xl font-bold capitalize">{{ review.game_name }}</h2>
             <p class="text-gray-500"><span>Publisher: </span>{{ review.publisher }}</p>
             <p class="text-gray-500"><span>Developer: </span>{{ review.developer }}</p>
@@ -38,7 +37,6 @@
             <p class="mt-4"><span>Date: </span>{{ review.date }}</p>
             <p class="mt-4"><span>By: </span>{{ review.author }}</p>
         </div>
-
         {% else %}
         <div class="lg:h-screen text-center mb-10">
             <img src="{{ url_for('static', filename='./images/try-again.webp') }}"
