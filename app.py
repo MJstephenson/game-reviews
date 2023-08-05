@@ -184,12 +184,13 @@ def add_review():
         user_id = ObjectId(session["user_id"])
         # This will get the author from the form
         author = request.form.get("author")
-
-        existing_review = mongo.db.add_review.find_one(  # This code will check if a review for this game is in my database for this user
+        # This code will check if a review for this
+        # game is in my database for this user
+        existing_review = mongo.db.add_review.find_one(
             {"game_name": game_name, "user_id": user_id}
         )
-
-        if existing_review:  # If a user has already made a game review show my message
+        # If a user has already made a game review show my message
+        if existing_review:
             error_message = ("Just to let you know you "
                              "have already reviewed this game! "
                              "You must Really Like it!! "
@@ -210,14 +211,16 @@ def add_review():
                 "author": author,
                 "username": session[
                     "user"
-                ],  # Add the username from my current session to the database with the form
+                ],  # Add the username from my current session
+                    # to the database with the form
                 "user_id": ObjectId(
                     session["user_id"]
                 ),  # Add the user id from the session to the database
             }
             mongo.db.add_review.insert_one(review)
-
-            mongo.db.add_review.update_many(  # this will update all of the users reviews tio have the same authors name
+            # this will update all of the users reviews
+            # to have the same authors name
+            mongo.db.add_review.update_many(
                 {"user_id": ObjectId(session["user_id"])}, {
                     "$set": {"author": author}}
             )
