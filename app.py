@@ -44,7 +44,8 @@ def manage_reviews():
     reviews = mongo.db.add_review.find({"user_id": current_user_id})
     # Count documents so that I can apply differednt style classes to
     # reviews.html depending on how many reviews are shown
-    review_count = mongo.db.add_review.count_documents({"user_id": current_user_id})
+    query = {"user_id": current_user_id}
+    review_count = mongo.db.add_review.count_documents(query)
     return render_template(
         "manage_reviews.html", reviews=reviews, review_count=review_count
     )
