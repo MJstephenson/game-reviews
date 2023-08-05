@@ -2,234 +2,172 @@
 {% block content %}
 
 <div class=" lg:flex lg:flex-wrap w-full">
-
-    <!-- Left column container-->
-    <div class="flex lg:w-6/12 lg:h-screen bg-gradient-to-r from-[#dd0707] via-black to-black">
-      <div class="px-4 text-white md:mx-6 ">
-          <h1 class="font-bungee text-4xl sm:text-6xl my-2"> Add Your Game Review</h1>
-          <p class="mb-6 pt-10 font-semibold">
-            Use the form to add a game that you wish to review. Ensure that all fields are completed in order to
-            submit the details. Once submitted you can edit or delete your game review in the manage reviews section
-            of the website.
-          </p>
-      </div>
+  <!-- Left column container-->
+  <div class="flex lg:w-6/12 lg:h-screen bg-gradient-to-r from-[#dd0707] via-black to-black">
+    <div class="px-4 text-white md:mx-6 ">
+      <h1 class="font-bungee text-4xl sm:text-6xl my-2"> Add Your Game Review</h1>
+      <p class="mb-6 pt-10 font-semibold">
+        Use the form to add a game that you wish to review. Ensure that all fields are completed in order to
+        submit the details. Once submitted you can edit or delete your game review in the manage reviews section
+        of the website.
+      </p>
+    </div>
   </div>
-
-    <!-- Right column container with sonic image and input fields-->
-
-    <div class="flex w-full lg:w-1/2 mx-auto">
-
-        <div class="w-full px-8 pt-6 pb-8 mb-4">
-            <h2 class="block text-gray-700 text-lg font-bold mb-2">Game Details Form</h2>
-            <!-- form -->
-            <form action="{{url_for('add_review')}}" method="POST" class="mb-4 space-y-4">
-                <!-- Game Name -->
-                <div>
-                    <select name="game_name" data-te-select-init
-                            data-te-select-placeholder="Select Game"
-                            data-te-select-init data-te-select-filter="true">
-                        {% for game_name in game_names %}
-                            <option value="{{ game_name }}">{{ game_name }}</option>
-                        {% endfor %}
-                    </select>
-                    <label data-te-select-label-ref>Game Name</label>
-                </div>
-                
-                <!-- Publisher -->
-                <div class="relative mb-3" data-te-input-wrapper-init>
-                    <input
-                      type="text"
-                      name="publisher"
-                      class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                      id="publisher"
-                      placeholder="Publisher"
-                      required />
-                    <label
-                      for="publisher"
-                      class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
-                      >Publisher
-                    </label>
-                </div>
-                 <!-- Developer -->
-                 <div class="relative mb-3" data-te-input-wrapper-init>
-                    <input
-                      type="text"
-                      name="developer"
-                      class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                      id="developer"
-                      placeholder="developer"
-                      required />
-                    <label
-                      for="developer"
-                      class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
-                      >Developer
-                    </label>
-                </div>
-                <!-- Release Date -->
-                <div class="relative mb-3" id="datepicker-with-limits" data-te-datepicker-init
-                    data-te-format="yyyy" data-te-input-wrapper-init>
-                    <input type="text"
-                        name="release_year"
-                        id="release_year"
-                        class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                        placeholder="Select a date between 1986 and 1996" required/>
-                    <label for="release_year"
-                        class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary">Release Year</label>
-                </div>
-                <!-- Game Genre -->
-                <div class="mb-3">
-                    <select name="genre" 
-                    data-te-select-init
-                    data-te-select-placeholder="Select Game Genre"
-                    data-te-select-init data-te-select-filter="true">
-                        <option>Action</option>
-                        <option>Adventure</option>
-                        <option>Puzzle</option>
-                        <option>Platformer</option>
-                        <option>Role-Playing (RPG)</option>
-                        <option>Shoot 'Em Up</option>
-                        <option>Simulation</option>
-                        <option>Sports</option>
-                        <option>Strategy</option>
-                        <option>Racing</option>
-                        <option>Beat 'Em Up</option>
-                        <option>Arcade</option>
-                        <option>Fighting</option>
-                        <option>Horror</option>
-                        <option>Educational</option>
-                        <option>Music/Rhythm</option>
-                        <option>Puzzle/Strategy</option>
-                        <option>Shoot 'em Up (Vertical)</option>
-                        <option>Shoot 'em Up (Horizontal)</option>
-                        <option>First-Person Shooter (FPS)</option>
-                        <option>Third-Person Shooter (TPS)</option>
-                        <option>Gun Game</option>
-                        <option>Other</option>
-                    </select>
-                    <label data-te-select-label-ref>Game Genre</label>
-                </div>
-                
-                <!-- Number of players -->
-                <div class="mb-[0.125rem] block min-h-[1.5rem] pl-[1.5rem] mb-3">
-                    <input
-                      class="relative float-left -ml-[1.5rem] mr-1 mt-0.5 h-5 w-5 appearance-none rounded-full border-2 border-solid border-neutral-300 before:pointer-events-none before:absolute before:h-4 before:w-4 before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] after:absolute after:z-[1] after:block after:h-4 after:w-4 after:rounded-full after:content-[''] checked:border-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:h-[0.625rem] checked:after:w-[0.625rem] checked:after:rounded-full checked:after:border-primary checked:after:bg-primary checked:after:content-[''] checked:after:[transform:translate(-50%,-50%)] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:outline-none focus:ring-0 focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:border-primary checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] dark:border-neutral-600 dark:checked:border-primary dark:checked:after:border-primary dark:checked:after:bg-primary dark:focus:before:shadow-[0px_0px_0px_13px_rgba(255,255,255,0.4)] dark:checked:focus:border-primary dark:checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca]"
-                      type="radio"
-                      name="player_number"
-                      id="players1"
-                      value="1"
-                      checked />
-                    <label
-                      class="mt-px inline-block pl-[0.15rem] hover:cursor-pointer"
-                      for="players1">
-                      1 Player
-                    </label>
-                  </div>
-                  <div class="mb-[0.125rem] block min-h-[1.5rem] pl-[1.5rem]">
-                    <input
-                      class="relative float-left -ml-[1.5rem] mr-1 mt-0.5 h-5 w-5 appearance-none rounded-full border-2 border-solid border-neutral-300 before:pointer-events-none before:absolute before:h-4 before:w-4 before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] after:absolute after:z-[1] after:block after:h-4 after:w-4 after:rounded-full after:content-[''] checked:border-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:h-[0.625rem] checked:after:w-[0.625rem] checked:after:rounded-full checked:after:border-primary checked:after:bg-primary checked:after:content-[''] checked:after:[transform:translate(-50%,-50%)] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:outline-none focus:ring-0 focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:border-primary checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] dark:border-neutral-600 dark:checked:border-primary dark:checked:after:border-primary dark:checked:after:bg-primary dark:focus:before:shadow-[0px_0px_0px_13px_rgba(255,255,255,0.4)] dark:checked:focus:border-primary dark:checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca]"
-                      type="radio"
-                      name="player_number"
-                      id="players2"
-                      value="2"
-                       />
-                    <label
-                      class="mt-px inline-block pl-[0.15rem] hover:cursor-pointer"
-                      for="players2">
-                      2 Players
-                    </label>
-                  </div>
-                <!-- Star Rating -->
-                  <fieldset class="flex gap-2">
-                    <legend class="mb-3">Star Rating</legend>
-                    {% for i in range(1, 11) %} <!-- iterate over to produce stars and radio buttons with a value 1-10 -->
-                    <label for="star_rating" class="flex flex-col items-center">
-                        <input type="radio" name="star_rating" id="star_rating" value="{{ i }}" required>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="red" viewBox="0 0 24 24" stroke="yellow">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2l3.09 6.26L22 9.27l-5 4.96 1.18 6.87L12 18.77l-6.18 3.35L7 14.22l-5-4.95 6.91-1.01L12 2z" />
-                        </svg>
-                        <span>{{ i }}</span>                        
-                    </label>
-                    {% endfor %}
-                  </fieldset>
-                <!-- Game Review -->
-                <div class="relative mb-3" data-te-input-wrapper-init>
-                    <textarea
-                      name="game_review"
-                      class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                      id="game-review"
-                      rows="3"
-                      placeholder="Your message"
-                      minlength="50"
-                      maxlength="3000"
-                      required
-                    ></textarea>
-                    <label
-                      for="game_review"
-                      class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
-                      >Game Review</label
-                    >
-                </div>
-
-                <!-- author -->
-                <div class="relative mb-3" data-te-input-wrapper-init>
-                  <input
-                    type="text"
-                    name="author"
-                    class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                    id="author"
-                    placeholder="author"
-                    required />
-                  <label
-                    for="author"
-                    class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
-                    >Author
-                  </label>
-              </div>
-
-                <!-- Image Upload -->
-                <div class="mb-3">
-                    <label
-                      for="formFile"
-                      class="mb-2 inline-block text-neutral-700 dark:text-neutral-200"
-                      >Upload an image</label
-                    >
-                    <input
-                      class="relative m-0 block w-full min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-clip-padding px-3 py-[0.32rem] text-base font-normal text-neutral-700 transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:bg-neutral-100 file:px-3 file:py-[0.32rem] file:text-neutral-700 file:transition file:duration-150 file:ease-in-out file:[border-inline-end-width:1px] file:[margin-inline-end:0.75rem] hover:file:bg-neutral-200 focus:border-primary focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:file:bg-neutral-700 dark:file:text-neutral-100 dark:focus:border-primary"
-                      type="file"
-                      id="formFile" />
-                  </div>
-
-                <!-- Submit Button -->
-                <div class="flex gap-4">
-                    <input
-                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                        type="submit" value="Submit">
-                      <a href="{{ url_for('manage_reviews') }}"class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Manage Reviews</a>
-                </div>
-                
-            </form>
-            {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {% for message in messages %}
-                        <h4 class="warning">{{ message }}</h4>
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
-
-        {% if error_message %}
-        <div class=" border border-red-500 text-center p-7">
-          <p class="text-red-500 font-bold ">{{ error_message }}</p> <!-- This will show my error message from app.py -->
+  <!-- Right column container with sonic image and input fields-->
+  <div class="flex w-full lg:w-1/2 mx-auto">
+    <div class="w-full px-8 pt-6 pb-8 mb-4">
+      <h2 class="block text-gray-700 text-lg font-bold mb-2">Game Details Form</h2>
+      <!-- form -->
+      <form action="{{url_for('add_review')}}" method="POST" class="mb-4 space-y-4">
+        <!-- Game Name -->
+        <div>
+          <select name="game_name" data-te-select-init data-te-select-placeholder="Select Game" data-te-select-init
+            data-te-select-filter="true">
+            {% for game_name in game_names %}
+            <option value="{{ game_name }}">{{ game_name }}</option>
+            {% endfor %}
+          </select>
+          <label data-te-select-label-ref>Game Name</label>
         </div>
-        {% endif %}
-        </>
+        <!-- Publisher -->
+        <div class="relative mb-3" data-te-input-wrapper-init>
+          <input type="text" name="publisher"
+            class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+            id="publisher" placeholder="Publisher" required />
+          <label for="publisher"
+            class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary">Publisher
+          </label>
+        </div>
+        <!-- Developer -->
+        <div class="relative mb-3" data-te-input-wrapper-init>
+          <input type="text" name="developer"
+            class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+            id="developer" placeholder="developer" required />
+          <label for="developer"
+            class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary">Developer
+          </label>
+        </div>
+        <!-- Release Date -->
+        <div class="relative mb-3" id="datepicker-with-limits" data-te-datepicker-init data-te-format="yyyy"
+          data-te-input-wrapper-init>
+          <input type="text" name="release_year" id="release_year"
+            class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+            placeholder="Select a date between 1986 and 1996" required />
+          <label for="release_year"
+            class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary">Release
+            Year</label>
+        </div>
+        <!-- Game Genre -->
+        <div class="mb-3">
+          <select name="genre" data-te-select-init data-te-select-placeholder="Select Game Genre" data-te-select-init
+            data-te-select-filter="true">
+            <option>Action</option>
+            <option>Adventure</option>
+            <option>Puzzle</option>
+            <option>Platformer</option>
+            <option>Role-Playing (RPG)</option>
+            <option>Shoot 'Em Up</option>
+            <option>Simulation</option>
+            <option>Sports</option>
+            <option>Strategy</option>
+            <option>Racing</option>
+            <option>Beat 'Em Up</option>
+            <option>Arcade</option>
+            <option>Fighting</option>
+            <option>Horror</option>
+            <option>Educational</option>
+            <option>Music/Rhythm</option>
+            <option>Puzzle/Strategy</option>
+            <option>Shoot 'em Up (Vertical)</option>
+            <option>Shoot 'em Up (Horizontal)</option>
+            <option>First-Person Shooter (FPS)</option>
+            <option>Third-Person Shooter (TPS)</option>
+            <option>Gun Game</option>
+            <option>Other</option>
+          </select>
+          <label data-te-select-label-ref>Game Genre</label>
+        </div>
+        <!-- Number of players -->
+        <div class="mb-[0.125rem] block min-h-[1.5rem] pl-[1.5rem] mb-3">
+          <input
+            class="relative float-left -ml-[1.5rem] mr-1 mt-0.5 h-5 w-5 appearance-none rounded-full border-2 border-solid border-neutral-300 before:pointer-events-none before:absolute before:h-4 before:w-4 before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] after:absolute after:z-[1] after:block after:h-4 after:w-4 after:rounded-full after:content-[''] checked:border-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:h-[0.625rem] checked:after:w-[0.625rem] checked:after:rounded-full checked:after:border-primary checked:after:bg-primary checked:after:content-[''] checked:after:[transform:translate(-50%,-50%)] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:outline-none focus:ring-0 focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:border-primary checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] dark:border-neutral-600 dark:checked:border-primary dark:checked:after:border-primary dark:checked:after:bg-primary dark:focus:before:shadow-[0px_0px_0px_13px_rgba(255,255,255,0.4)] dark:checked:focus:border-primary dark:checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca]"
+            type="radio" name="player_number" id="players1" value="1" checked />
+          <label class="mt-px inline-block pl-[0.15rem] hover:cursor-pointer" for="players1">
+            1 Player
+          </label>
+        </div>
+        <div class="mb-[0.125rem] block min-h-[1.5rem] pl-[1.5rem]">
+          <input
+            class="relative float-left -ml-[1.5rem] mr-1 mt-0.5 h-5 w-5 appearance-none rounded-full border-2 border-solid border-neutral-300 before:pointer-events-none before:absolute before:h-4 before:w-4 before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] after:absolute after:z-[1] after:block after:h-4 after:w-4 after:rounded-full after:content-[''] checked:border-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:h-[0.625rem] checked:after:w-[0.625rem] checked:after:rounded-full checked:after:border-primary checked:after:bg-primary checked:after:content-[''] checked:after:[transform:translate(-50%,-50%)] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:outline-none focus:ring-0 focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:border-primary checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] dark:border-neutral-600 dark:checked:border-primary dark:checked:after:border-primary dark:checked:after:bg-primary dark:focus:before:shadow-[0px_0px_0px_13px_rgba(255,255,255,0.4)] dark:checked:focus:border-primary dark:checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca]"
+            type="radio" name="player_number" id="players2" value="2" />
+          <label class="mt-px inline-block pl-[0.15rem] hover:cursor-pointer" for="players2">
+            2 Players
+          </label>
+        </div>
+        <!-- Star Rating -->
+        <fieldset class="flex gap-2">
+          <legend class="mb-3">Star Rating</legend>
+          {% for i in range(1, 11) %} <!-- iterate over to produce stars and radio buttons with a value 1-10 -->
+          <label for="star_rating" class="flex flex-col items-center">
+            <input type="radio" name="star_rating" id="star_rating" value="{{ i }}" required>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="red" viewBox="0 0 24 24" stroke="yellow">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 2l3.09 6.26L22 9.27l-5 4.96 1.18 6.87L12 18.77l-6.18 3.35L7 14.22l-5-4.95 6.91-1.01L12 2z" />
+            </svg>
+            <span>{{ i }}</span>
+          </label>
+          {% endfor %}
+        </fieldset>
+        <!-- Game Review -->
+        <div class="relative mb-3" data-te-input-wrapper-init>
+          <textarea name="game_review"
+            class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+            id="game-review" rows="3" placeholder="Your message" minlength="50" maxlength="3000" required></textarea>
+          <label for="game_review"
+            class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary">Game
+            Review</label>
+        </div>
+        <!-- author -->
+        <div class="relative mb-3" data-te-input-wrapper-init>
+          <input type="text" name="author"
+            class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+            id="author" placeholder="author" required />
+          <label for="author"
+            class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary">Author
+          </label>
+        </div>
+        <!-- Submit Button -->
+        <div class="flex gap-4">
+          <input
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            type="submit" value="Submit">
+          <a href="{{ url_for('manage_reviews') }}"
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Manage
+            Reviews</a>
+        </div>
+      </form>
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+      {% for message in messages %}
+      <h4 class="warning">{{ message }}</h4>
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
+
+      {% if error_message %}
+      <div class=" border border-red-500 text-center p-7">
+        <p class="text-red-500 font-bold ">{{ error_message }}</p> <!-- This will show my error message from app.py -->
+      </div>
+      {% endif %}
+      </>
 
     </div>
-</div>
+  </div>
 
 
-<!-- form goes here -->
+  <!-- form goes here -->
 
 
 
 
-{% endblock %}
+  {% endblock %}
