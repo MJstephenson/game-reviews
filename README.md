@@ -133,7 +133,7 @@ I've used [Figma](https://figma.com) to design my site wireframes.
 
     - A returning user can log back in using their username and password. 
 
-![screenshot](documentation/screenshots/register.png)
+![screenshot](documentation/screenshots/login.png)
 
 - **Add Review**
 
