@@ -203,6 +203,25 @@ I've used [Figma](https://figma.com) to design my site wireframes.
 
 ![screenshot](documentation/screenshots/warning-game.png)
 
+- **Footer Icons**
+
+    - Footer icons link to my linkedin and github pages.
+
+![screenshot](documentation/screenshots/footer.png)
+
+ **User Exists**
+
+    - Shows if a user tries to use a username that already appears in the database.
+
+![screenshot](documentation/screenshots/user-exists.png)
+
+ **Incorrect username and password**
+
+    - Shows if the users username or password is incorrect.
+
+![screenshot](documentation/screenshots/incorrect-user.png)
+
+
 
 ### Future Features
 
