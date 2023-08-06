@@ -103,71 +103,75 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 
 ## Defensive Programming
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-Defensive programming (defensive design) is extremely important!
-
-When building projects that accept user inputs or forms, you should always test the level of security for each.
-Examples of this could include (not limited to):
-
-Forms:
-- Users cannot submit an empty form
-
-PP3 (Python-only):
-- Users must enter a valid letter/word/string when prompted
-- Users must choose from a specific list only
-
-Flask:
-- Users cannot brute-force a URL to navigate to a restricted page
+- User-A is not able to manipulate data belonging to User-B, or vice versa
 - Users cannot perform CRUD functionality while logged-out
-- User-A should not be able to manipulate data belonging to User-B, or vice versa
-- Non-Authenticated users should not be able to access pages that require authentication
-
-
-You'll want to test all functionality on your application, whether it's a standard form,
-or uses CRUD functionality for data manipulation on a database.
-Make sure to include the `required` attribute on any form-fields that should be mandatory.
-Try to access various pages on your site as different user types (User-A, User-B, guest user, admin, superuser).
-
-You should include any manual tests performed, and the expected results/outcome.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
+- Users cannot brute-force a URL to navigate to a restricted page
 
 Defensive programming was manually tested with the below user acceptance testing:
 
 | Page | User Action | Expected Result | Pass/Fail | Comments |
 | --- | --- | --- | --- | --- |
 | Home Page | | | | |
-| | Click on Logo | Redirection to Home page | Pass | |
 | | Click on Home link in navbar | Redirection to Home page | Pass | |
-| Gallery Page | | | | |
-| | Click on Gallery link in navbar | Redirection to Gallery page | Pass | |
-| | Load gallery images | All images load as expected | Pass | |
-| Contact Page | | | | |
-| | Click on Contact link in navbar | Redirection to Contact page | Pass | |
-| | Enter first/last name | Field will accept freeform text | Pass | |
-| | Enter valid email address | Field will only accept email address format | Pass | |
-| | Enter message in textarea | Field will accept freeform text | Pass | |
-| | Click the Submit button | Redirects user to form-dump | Pass | User must click 'Back' button to return |
-| Sign Up | | | | |
-| | Click on Sign Up button | Redirection to Sign Up page | Pass | |
-| | Enter valid email address | Field will only accept email address format | Pass | |
-| | Enter valid password (twice) | Field will only accept password format | Pass | |
-| | Click on Sign Up button | Asks user to confirm email page | Pass | Email sent to user |
-| | Confirm email | Redirects user to blank Sign In page | Pass | |
-| Log In | | | | |
-| | Click on the Login link | Redirection to Login page | Pass | |
-| | Enter valid email address | Field will only accept email address format | Pass | |
-| | Enter valid password | Field will only accept password format | Pass | |
-| | Click Login button | Redirects user to home page | Pass | |
+| | Click on Register link on page | Redirection to register page | Pass | |
+| About Page | | | | |
+| | Click on About link in navbar | Redirection to About page | Pass | |
+| Reviews Page | | | | |
+| | Click on Reviews link in navbar | Redirection to Reviews page | Pass | |
+| | If no reviews show default image and button |  | Pass | |
+| | Reviews from different users are shown when added | Pass | |
+| Register Page | | | | |
+| | Click on Register link in navbar | Redirection to Register page | Pass | |
+| | Click on Log in link under form | Redirection to Log in page | Pass | |
+| | Enter username | Field will only accept text within parameters and show tooltip | Pass | |
+| | Enter password  | Field will only accept text within parameters and show tooltip | Pass | |
+| | Submitting existing username | flash message shows | Pass | |
+| | Correctly filling inputs and clicking register | Redirects to profile page | Pass | |
 | Log Out | | | | |
-| | Click Logout button | Redirects user to logout page | Pass | Confirms logout first |
-| | Click Confirm Logout button | Redirects user to home page | Pass | |
+| | Click Logout button | Redirects user to log in page | Pass | |
+| Log In | | | | |
+| | Click on the Login nav link | Redirection to Login page | Pass | |
+| | Enter username | Field will only accept text within parameters and show tooltip | Pass | |
+| | Enter password  | Field will only accept text within parameters and show tooltip | Pass | |
+| | Correctly filling out form and clicking login | Redirects user to profile page | Pass | |
+| | Click on Register link under form | Redirection to register page | Pass | |
 | Profile | | | | |
-| | Click on Profile button | User will be redirected to the Profile page | Pass | |
-| | Click on the Edit button | User will be redirected to the edit profile page | Pass | |
-| | Click on the My Orders link | User will be redirected to the My Orders page | Pass | |
-| | Brute forcing the URL to get to another user's profile | User should be given an error | Pass | Redirects user back to own profile |
+| | Click on the profile nav link | Redirection to profile page | Pass | |
+| | Click on the create new review button | User will be redirected to the add review page | Pass | |
+| | Click on the manage reviews button | User will be redirected to the add review page | Pass | |
+| | Only show change author if reviews >0 |  | Pass | |
+| | Show number of review/s made and name of game/s | | Pass | |
+| | Show flash message author name has been updated | | Pass | |
+| | Updates all users (only) author names on review cards | | Pass | |
+| | Author name | User must imput 3-30 characters if imncorrect show tooltip | Pass | |
+| Add Review| | | | |
+| | Click on add review in the nav link | Redirection to add review page | Pass | |
+| | Click on the submit button | User cant proceed | Pass | |
+| | Click on the submit button with a game name already in users reviews | User will be shown a message you have already made a review for this game | Pass | |
+| | Click in the manage reviews button | user is redirected to manage reviews | Pass | |
+| | All imputs show tooltips with parameters on ivalid user input() | Tooltip is shown | 2 Fail | See Bugs Section |
+| | Click submit with no game name selected | user is redirected to manage reviews | Fail | See Bugs Section |
+| | Click submit with no game genre selected | user is redirected to manage reviews | Fail | See Bugs Section |
+| | Clicking on game name shows dropdown list | user can search or select a game which then shows in the input field| Pass | |
+| | Clicking on game genre shows dropdown list | user can search or select a game genre which then shows in the input field| Pass | |
+| | Using a different author name if reviews >0 updates all users review cards | | Pass | |
+| | Using a different author name if reviews >0 updates all users review cards | | Pass | |
+| | Flash message when game review has been added |  | Pass | Considered redirect to manage reviews page, but thought user may wish to add another review  |
+Manage Reviews | | | | |
+| | Click on the manage reviews nav link | Redirection to manage reviews page | Pass | |
+| | Click on the create edit review button | User will be redirected to the add edit review page | Pass | |
+| | Click on the delete review button | Shows warning popup | Pass | |
+| | Warning popup | user can delete the review or cancel | Pass | reviews are deleted if user preses ok and is removed from reviews page and manage rviews page|
+| | Users reviews appear on page | | Pass | |
+| | Default image and button appear if no reviews have been made | | Pass | |
+Edit Reviews | | | | |
+| | The specified review to edit appears | All details from the review appear on the form | 1 fail see bugs | |
+| | Game name is not editable |  | Pass | |
+| | All except game name fields are editable |  | Pass | |
+| | All tooltips with set parameters show for all imput fields |  | Pass | |
+| | Update review button | the form updates with the new user inputs on both manage reviews and reviews page| Pass | |
+
+
 
 ⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
 
