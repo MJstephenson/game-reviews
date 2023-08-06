@@ -132,18 +132,13 @@ Sample JS code validation documentation (tables are extremely helpful!):
 | File | Screenshot | Notes |
 | --- | --- | --- |
 | script.js | ![screenshot](documentation/js-validation-script.png) | Unused variables from external files |
-| questions.js | ![screenshot](documentation/js-validation-questions.png) | Pass: No Errors |
-| quiz.js | ![screenshot](documentation/js-validation-quiz.png) | Unused variables from external files |
-| stripe_elements.js | ![screenshot](documentation/js-validation-stripe.png) | Undefined Stripe variable |
-| x | x | x | repeat for all remaining JavaScript files |
+
 
 ### Python
 
 I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) to validate all of my Python files.
 
 ![screenshot](documentation/testing/validation/python.png)
-
-
 
 
 ## Browser Compatibility
@@ -160,39 +155,17 @@ I have tested my deployed project on multiple browsers to check for compatibilit
 
 ## Responsiveness
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-Use this space to discuss testing the live/deployed site on various device sizes.
-
-The minimum requirement is for the following 3 tests:
-- Mobile
-- Tablet
-- Desktop
-
-**IMPORTANT**: You must provide screenshots of the tested responsiveness, to "prove" that you've actually tested them.
-
-Using the "amiresponsive" mockup image (or similar) does not suffice the requirements.
-Consider using some of the built-in device sizes in the Developer Tools.
-
-If you have tested the project on your actual mobile phone or tablet, consider also including screenshots of these as well.
-It showcases a higher level of manual tests, and can be seen as a positive inclusion!
-
-Sample responsiveness testing documentation:
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-I've tested my deployed project on multiple devices to check for responsiveness issues.
+I have tested my deployed project on multiple devices to check for responsiveness issues. I have tested all pages and they work as expected. Below are screenshots of the homepage on various devices.
 
 | Device | Screenshot | Notes |
 | --- | --- | --- |
-| Mobile (DevTools) | ![screenshot](documentation/responsive-mobile.png) | Works as expected |
-| Tablet (DevTools) | ![screenshot](documentation/responsive-tablet.png) | Works as expected |
-| Desktop | ![screenshot](documentation/responsive-desktop.png) | Works as expected |
-| XL Monitor | ![screenshot](documentation/responsive-xl.png) | Scaling starts to have minor issues |
-| 4K Monitor | ![screenshot](documentation/responsive-4k.png) | Noticeable scaling issues |
-| Google Pixel 7 Pro | ![screenshot](documentation/responsive-pixel.png) | Works as expected |
-| iPhone 14 | ![screenshot](documentation/responsive-iphone.png) | Works as expected |
-| x | x | repeat for any other tested sizes |
+| Mobile (DevTools) | ![screenshot](documentation/testing/screenshots/responsiveness/mobile-test.png) | Works as expected |
+| Tablet (DevTools) | ![screenshot](documentation/testing/screenshots/responsiveness/tablet-test.png) | Works as expected |
+| Desktop | ![screenshot](documentation/testing/screenshots/responsiveness/desktop-test-test.png) | Works as expected |
+| XL Monitor | ![screenshot](documentation/testing/screenshots/responsiveness/xlmonitor-test.png) | Works as expected |
+| Doogee N40 Pro | ![screenshot](documentation/testing/screenshots/responsiveness/n40-pro.png) | Navbar becomes gray |
+| iPhone X | ![screenshot](documentation/testing/screenshots/responsiveness/iphone-x.png) | Navbar becomes gray |
+
 
 ## Lighthouse Audit
 
@@ -236,18 +209,17 @@ Examples of this could include (not limited to):
 
 Forms:
 - Users cannot submit an empty form
-- Users must enter valid email addresses
 
 PP3 (Python-only):
 - Users must enter a valid letter/word/string when prompted
 - Users must choose from a specific list only
 
-Flask/Django:
+Flask:
 - Users cannot brute-force a URL to navigate to a restricted page
 - Users cannot perform CRUD functionality while logged-out
 - User-A should not be able to manipulate data belonging to User-B, or vice versa
 - Non-Authenticated users should not be able to access pages that require authentication
-- Standard users should not be able to access pages intended for superusers
+
 
 You'll want to test all functionality on your application, whether it's a standard form,
 or uses CRUD functionality for data manipulation on a database.
@@ -369,25 +341,6 @@ For JavaScript and Python applications, it's best to screenshot the errors to in
 
     - To fix this, I _____________________.
 
-### GitHub **Issues**
-
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-An improved way to manage bugs is to use the built-in **Issues** tracker on your GitHub repository.
-To access your Issues, click on the "Issues" tab at the top of your repository.
-Alternatively, use this link: https://github.com/MJstephenson/game-reviews/issues
-
-If using the Issues tracker for your bug management, you can simplify the documentation process.
-Issues allow you to directly paste screenshots into the issue without having to first save the screenshot locally,
-then uploading into your project.
-
-You can add labels to your issues (`bug`), assign yourself as the owner, and add comments/updates as you progress with fixing the issue(s).
-
-Once you've sorted the issue, you should then "Close" it.
-
-When showcasing your bug tracking for assessment, you can use the following format:
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
 
 **Fixed Bugs**
 
