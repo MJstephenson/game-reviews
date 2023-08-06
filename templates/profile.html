@@ -26,7 +26,6 @@
             </div>
             {% if review_count > 0 %}
             <p class="mt-8">You can change Your Author name to display on all of your reviews:</p>
-
             <p>(max 30 characters)</p>
             <form method="POST" class="my-4">
                 <label for="new_author">Change Author:</label>
@@ -43,10 +42,11 @@
                 </div>
                 {% endif %}
                 {% endwith %}
-                {% endif %}
             </form>
+            {% endif %}
         </div>
     </div>
+
     <!-- Right column container with sonic image and input fields-->
     <div class="px-4 md:px-0 lg:w-6/12">
         <div class="md:mx-6 md:p-12">
