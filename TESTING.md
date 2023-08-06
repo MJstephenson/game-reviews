@@ -209,6 +209,10 @@ Edit Reviews | | | | |
 
     ![screenshot](documentation/testing/bugs/bug-login-fields.png)
 
+- I have a console warning regards the use of using the tailwind cdn in production. I would have to install the tailwind CLI to fix this which I will leave for when I come back to this project to develop it further.
+
+    ![screenshot](documentation/testing/bugs/console-bug.png)
+
 - The star rating and game genre do not carry accross to the form from the users review when on the edit review page. I believe the genre is not due to the tailwind elements classes effecting the form however I believe that more code could be required to get the star rating from the previous form.
 
 
