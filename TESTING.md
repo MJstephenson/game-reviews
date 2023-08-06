@@ -3,74 +3,23 @@
 Return back to the [README.md](README.md) file.
 
 
-## Code Validation
-
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-Use the space to discuss code validation for any of your own code files (where applicable).
-You are not required to validate external libraries/frameworks, such as imported Bootstrap, Materialize, Font Awesome, etc.
-
-**IMPORTANT**: You must provide a screenshot for each file you validate.
-
-**PRO TIP**: Always validate the live site pages, not your local code. There could be subtle/hidden differences.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
 ### HTML
 
 I have used the recommended [HTML W3C Validator](https://validator.w3.org) to validate all of my HTML files.
-
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-- If you are copying/pasting your HTML code, use this link: https://validator.w3.org/#validate_by_input
-- (*recommended*) If you are using the live deployed site pages, use this link: https://validator.w3.org/#validate_by_uri
-
-It's recommended to validate the live pages (each of them) using the deployed URL.
-This will give you a custom URL as well, which you can use on your testing documentation.
-It makes it easier to return back to a page to validate it again in the future.
-The URL will look something like this:
-
-- https://validator.w3.org/nu/?doc=https%3A%2F%2FMJstephenson.github.io%2Fgame-reviews%2Findex.html
-
-Sample HTML code validation documentation (tables are extremely helpful!):
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
+I have ignored the warnings for trailing slashes.
 
 | Page | W3C URL | Screenshot | Notes |
 | --- | --- | --- | --- |
-| Home |  ![screenshot](documentation/html-validation-home.png) | Section lacks header h2-h6 warning |
-| About  ![screenshot](documentation/html-validation-contact.png) | obsolete iframe warnings |
-| Reviews | ![screenshot](documentation/html-validation-quiz.png) | Pass: No Errors |
-| Register |  ![screenshot](documentation/html-validation-home.png) | Section lacks header h2-h6 warning |
-| Login  ![screenshot](documentation/html-validation-contact.png) | obsolete iframe warnings |
-| Add Review | ![screenshot](documentation/html-validation-quiz.png) | Pass: No Errors |
-| Manage Review |  ![screenshot](documentation/html-validation-home.png) | Section lacks header h2-h6 warning |
-| Edit Review  ![screenshot](documentation/html-validation-contact.png) | obsolete iframe warnings |
-| Profile | ![screenshot](documentation/html-validation-quiz.png) | Pass: No Errors |
+| Home |  ![screenshot](documentation/testing/validation/home-html.png) | pass |
+| About | ![screenshot](documentation/testing/validation/about-html.png) | pass |
+| Reviews | ![screenshot](documentation/testing/validation/reviews-html.png) | pass |
+| Register |  ![screenshot](documentation/testing/validation/register-html.png) | pass |
+| Login | ![screenshot](documentation/testing/validation/login-html.png) | pass |
+| Add Review | ![screenshot](documentation/testing/validation/add-review-html.png) | pass |
+| Manage Review |  ![screenshot](documentation/testing/validation/manage-reviews-html.png) | pass |
+| Edit Review | ![screenshot](documentation/testing/validation/edit-review-html.png) |  The value of the for attribute of the label element must be the ID of a non-hidden form control. Duplicate ID star_rating as the star rating is iterated over and therefore shows an error |
+| Profile | ![screenshot](documentation/testing/validation/profile-html.png) | Pass |
 
-
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-**IMPORTANT**: Python/Jinja syntax in HTML
-
-Python projects that use Jinja syntax, such as `{% for loops %}`, `{% url 'home' %}`, and `{{ variable|filter }}`
-will not validate properly if you're copying/pasting into the HTML validator.
-
-In order to properly validate these types of files, it's recommended to
-[validate by uri](https://validator.w3.org/#validate_by_uri) from the deployed Heroku pages.
-
-Unfortunately, pages that require a user to be logged-in and authenticated (CRUD functionality),
-will not work using this method, due to the fact that the HTML Validator (W3C) doesn't have
-access to login to your pages.
-In order to properly validate HTML pages with Jinja syntax for authenticated pages, follow these steps:
-
-- Navigate to the deployed pages which require authentication
-- Right-click anywhere on the page, and select **View Page Source** (usually `CTRL+U` or `⌘+U` on Mac).
-- This will display the entire "compiled" code, without any Jinja syntax.
-- Copy everything, and use the [validate by input](https://validator.w3.org/#validate_by_input) method.
-- Repeat this process for every page that requires a user to be logged-in/authenticated.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
 
 ### CSS
 
