@@ -1,10 +1,4 @@
 .warning {
     color:red;
 }
-body {
-    @apply font-special;
-  }
-  
-  h1 {
-    @apply font-bungee;
-  }
+
