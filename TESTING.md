@@ -41,12 +41,12 @@ Sample HTML code validation documentation (tables are extremely helpful!):
 | Home |  ![screenshot](documentation/html-validation-home.png) | Section lacks header h2-h6 warning |
 | About  ![screenshot](documentation/html-validation-contact.png) | obsolete iframe warnings |
 | Reviews | ![screenshot](documentation/html-validation-quiz.png) | Pass: No Errors |
-| Home |  ![screenshot](documentation/html-validation-home.png) | Section lacks header h2-h6 warning |
-| About  ![screenshot](documentation/html-validation-contact.png) | obsolete iframe warnings |
-| Reviews | ![screenshot](documentation/html-validation-quiz.png) | Pass: No Errors |
-| Home |  ![screenshot](documentation/html-validation-home.png) | Section lacks header h2-h6 warning |
-| About  ![screenshot](documentation/html-validation-contact.png) | obsolete iframe warnings |
-| Reviews | ![screenshot](documentation/html-validation-quiz.png) | Pass: No Errors |
+| Register |  ![screenshot](documentation/html-validation-home.png) | Section lacks header h2-h6 warning |
+| Login  ![screenshot](documentation/html-validation-contact.png) | obsolete iframe warnings |
+| Add Review | ![screenshot](documentation/html-validation-quiz.png) | Pass: No Errors |
+| Manage Review |  ![screenshot](documentation/html-validation-home.png) | Section lacks header h2-h6 warning |
+| Edit Review  ![screenshot](documentation/html-validation-contact.png) | obsolete iframe warnings |
+| Profile | ![screenshot](documentation/html-validation-quiz.png) | Pass: No Errors |
 
 
 ⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
@@ -126,7 +126,9 @@ I have tested my deployed project on multiple devices to check for responsivenes
 
 ## Lighthouse Audit
 
-I've tested my deployed project using the Lighthouse Audit tool to check for any major issues.
+I've tested my deployed project using the Lighthouse Audit tool to check for any major issues. I would have tested the herouku live app but I ran into this error so I tested on my local app.
+
+![screenshot](documentation/testing/screenshots/lighthouse/lighthouse-error.png)
 
 | Page | Size | Screenshot | Notes |
 | --- | --- | --- | --- |
@@ -227,16 +229,6 @@ The aforementioned tests are just an example of a few different project scenario
 
 ## User Story Testing
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-Testing user stories is actually quite simple, once you've already got the stories defined on your README.
-
-Most of your project's **features** should already align with the **user stories**,
-so this should as simple as creating a table with the user story, matching with the re-used screenshot
-from the respective feature.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
 | User Story | Screenshot |
 | --- | --- |
 | As a new site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/feature01.png) |
@@ -296,7 +288,6 @@ For JavaScript and Python applications, it's best to screenshot the errors to in
 
 **Fixed Bugs**
 
-All previously closed/fixed bugs can be tracked [here](https://github.com/MJstephenson/game-reviews/issues?q=is%3Aissue+is%3Aclosed).
 
 | Bug | Status |
 | --- | --- |
@@ -304,14 +295,6 @@ All previously closed/fixed bugs can be tracked [here](https://github.com/MJstep
 | [Python `'ModuleNotFoundError'` when trying to import module from imported package](https://github.com/MJstephenson/game-reviews/issues/2) | Closed |
 | [Django `TemplateDoesNotExist` at /appname/path appname/template_name.html](https://github.com/MJstephenson/game-reviews/issues/3) | Closed |
 
-**Open Issues**
-
-Any remaining open issues can be tracked [here](https://github.com/MJstephenson/game-reviews/issues).
-
-| Bug | Status |
-| --- | --- |
-| [JS `'let'` or `'const'` or `'template literal syntax'` or `'arrow function syntax (=>)'` is available in ES6 (use `'esversion: 11'`) or Mozilla JS extensions (use moz).](https://github.com/MJstephenson/game-reviews/issues/4) | Open |
-| [Python `E501 line too long` (93 > 79 characters)](https://github.com/MJstephenson/game-reviews/issues/5) | Open |
 
 ## Unfixed Bugs
 
@@ -334,7 +317,7 @@ Some examples:
 
     ![screenshot](documentation/unfixed-bug01.png)
 
-    - Attempted fix: I tried to add additional media queries to handle this, but things started becoming too small to read.
+    - When applying required to the code for the forms in game name and game genre, the required text box did not appear and the user could still submit the form.
 
 - For PP3, when using a helper `clear()` function, any text above the height of the terminal does not clear, and remains when you scroll up.
 
