@@ -38,12 +38,16 @@ Sample HTML code validation documentation (tables are extremely helpful!):
 
 | Page | W3C URL | Screenshot | Notes |
 | --- | --- | --- | --- |
-| Home | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2FMJstephenson.github.io%2Fgame-reviews%2Findex.html) | ![screenshot](documentation/html-validation-home.png) | Section lacks header h2-h6 warning |
-| Contact | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2FMJstephenson.github.io%2Fgame-reviews%2Fcontact.html) | ![screenshot](documentation/html-validation-contact.png) | obsolete iframe warnings |
-| Quiz | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2FMJstephenson.github.io%2Fgame-reviews%2Fquiz.html) | ![screenshot](documentation/html-validation-quiz.png) | Pass: No Errors |
-| Add Blog | n/a | ![screenshot](documentation/html-validation-add-blog.png) | Duplicate IDs found, and fixed |
-| Checkout | n/a | ![screenshot](documentation/html-validation-checkout.png) | Pass: No Errors |
-| x | x | x | repeat for all remaining HTML files |
+| Home |  ![screenshot](documentation/html-validation-home.png) | Section lacks header h2-h6 warning |
+| About  ![screenshot](documentation/html-validation-contact.png) | obsolete iframe warnings |
+| Reviews | ![screenshot](documentation/html-validation-quiz.png) | Pass: No Errors |
+| Home |  ![screenshot](documentation/html-validation-home.png) | Section lacks header h2-h6 warning |
+| About  ![screenshot](documentation/html-validation-contact.png) | obsolete iframe warnings |
+| Reviews | ![screenshot](documentation/html-validation-quiz.png) | Pass: No Errors |
+| Home |  ![screenshot](documentation/html-validation-home.png) | Section lacks header h2-h6 warning |
+| About  ![screenshot](documentation/html-validation-contact.png) | obsolete iframe warnings |
+| Reviews | ![screenshot](documentation/html-validation-quiz.png) | Pass: No Errors |
+
 
 ⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
 
@@ -122,34 +126,29 @@ I have tested my deployed project on multiple devices to check for responsivenes
 
 ## Lighthouse Audit
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-Use this space to discuss testing the live/deployed site's Lighthouse Audit reports.
-Avoid testing the local version (especially if developing in Gitpod), as this can have knock-on effects of performance.
-
-If you don't have Lighthouse in your Developer Tools,
-it can be added as an [extension](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk).
-
-Don't just test the home page (unless it's a single-page application).
-Make sure to test the Lighthouse Audit results for all of your pages.
-
-**IMPORTANT**: You must provide screenshots of the results, to "prove" that you've actually tested them.
-
-Sample Lighthouse testing documentation:
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
 I've tested my deployed project using the Lighthouse Audit tool to check for any major issues.
 
 | Page | Size | Screenshot | Notes |
 | --- | --- | --- | --- |
-| Home | Mobile | ![screenshot](documentation/lighthouse-home-mobile.png) | Some minor warnings |
-| Home | Desktop | ![screenshot](documentation/lighthouse-home-desktop.png) | Few warnings |
-| About | Mobile | ![screenshot](documentation/lighthouse-about-mobile.png) | Some minor warnings |
-| About | Desktop | ![screenshot](documentation/lighthouse-about-desktop.png) | Few warnings |
-| Gallery | Mobile | ![screenshot](documentation/lighthouse-gallery-mobile.png) | Slow response time due to large images |
-| Gallery | Desktop | ![screenshot](documentation/lighthouse-gallery-desktop.png) | Slow response time due to large images |
-| x | x | x | repeat for any other tested pages/sizes |
+| Home | Mobile | ![screenshot](documentation/testing/screenshots/lighthouse/home-mobile.png) | warning on explicit image sizes |
+| Home | Desktop | ![screenshot](documentation/testing/screenshots/lighthouse/home-desktop.png) | minor warnings |
+| About | Mobile | ![screenshot](documentation/testing/screenshots/lighthouse/about-mobile.png) | warning on explicit image sizes |
+| About | Desktop | ![screenshot](documentation/testing/screenshots/lighthouse/about-desktop.png) | minor warnings |
+| Reviews | Mobile | ![screenshot](documentation/testing/screenshots/lighthouse/reviews-mobile.png) | tailwind css |
+| Reviews | Desktop | ![screenshot](documentation/testing/screenshots/lighthouse/reviews-desktop.png) | minor warnings |
+| Register | Mobile | ![screenshot](documentation/testing/screenshots/lighthouse/register-mobile.png) | warning on explicit image sizes |
+| Register | Desktop | ![screenshot](documentation/testing/screenshots/lighthouse/register-desktop.png) | minor warnings |
+| Log in | Mobile | ![screenshot](documentation/testing/screenshots/lighthouse/login-mobile.png) | reduce unused javascript |
+| Log in | Desktop | ![screenshot](documentation/testing/screenshots/lighthouse/login-desktop.png) | minor warnings |
+| Profile | Mobile | ![screenshot](documentation/testing/screenshots/lighthouse/profile-mobile.png) | reduce unused javascript |
+| Profile | Desktop | ![screenshot](documentation/testing/screenshots/lighthouse/profile-desktop.png) | minor warnings |
+| Manage reviews | Mobile | ![screenshot](documentation/testing/screenshots/lighthouse/manage-reviews-mobile.png) | reduce unused javascript |
+| Manage reviews | Desktop | ![screenshot](documentation/testing/screenshots/lighthouse/manage-reviews-desktop.png) | minor warnings |
+| Add Review | Mobile | ![screenshot](documentation/testing/screenshots/lighthouse/add-review-mobile.png) | aria id's button contrast, unused javascript |
+| Add Review | Desktop | ![screenshot](documentation/testing/screenshots/lighthouse/add-review-desktop.png) | minor warnings, aria id's button contrast |
+| Edit review | Mobile | ![screenshot](documentation/testing/screenshots/lighthouse/edit-review-mobile.png) | warning on explicit image sizes layput shift and aria labels |
+| Edit review | Desktop | ![screenshot](documentation/testing/screenshots/lighthouse/edit-review-desktop.png) | warning on explicit image sizes layput shift and aria labels |
+
 
 ## Defensive Programming
 
