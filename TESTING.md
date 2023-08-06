@@ -184,16 +184,17 @@ The aforementioned tests are just an example of a few different project scenario
 
 | User Story | Screenshot |
 | --- | --- |
-| As a new site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/feature01.png) |
-| As a new site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/feature02.png) |
-| As a new site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/feature03.png) |
-| As a returning site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/feature04.png) |
-| As a returning site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/feature05.png) |
-| As a returning site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/feature06.png) |
-| As a site administrator, I should be able to ____________, so that I can ____________. | ![screenshot](documentation/feature07.png) |
-| As a site administrator, I should be able to ____________, so that I can ____________. | ![screenshot](documentation/feature08.png) |
-| As a site administrator, I should be able to ____________, so that I can ____________. | ![screenshot](documentation/feature09.png) |
-| repeat for all remaining user stories | x |
+| As a new site user, I would like to be able to register for an account with a username and password. | ![screenshot](documentation/screenshots/register.png) |
+| As a new site user, I would like to be able to log in with my username and password, so that I can access my account | ![screenshot](documentation/screenshots/login.png) |
+| As a new site user, I would like to be able to log out of my account. | ![screenshot](documentation/screenshots/log-out.png) |
+| As a new site user, I would like to be able to see my profile page, so that I can quickly see the reviews I have made. | ![screenshot](documentation/screenshots/profile-page.png) |
+| As a new site user, I would like to be able to make a review/s of master system games. | ![screenshot](documentation/screenshots/add-review-page.png) |
+| As a new site user, I would like to be able to see my game review/s, so that I can edit them. | ![screenshot](documentation/screenshots/edit-review.png) ![screenshot](documentation/screenshots/update-review.png) |
+| As a new site user, I would like to be able to see my game reviews/s, so that I can delete them. | ![screenshot](documentation/screenshots/edit-review.png) |
+| As a new site user, I would like to be able to change my author name, so that it appears on all of my reviews. | ![screenshot](documentation/screenshots/change-author.png) |
+| As a returning site user, I would like to be able to login back to my account. | ![screenshot](documentation/screenshots/login.png) |
+| As a returning site user, I would like to be able to see the reviews that I made the last time a was on the site. | ![screenshot](documentation/screenshots/review-page.png) |
+
 
 ## Bugs
 
@@ -266,15 +267,12 @@ Some examples:
 
 🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
 
-- On devices smaller than 375px, the page starts to have `overflow-x` scrolling.
+- 'Required' not working on form for game name and game genre .
+    - When applying required to the code for the forms in game name and game genre, the required text box did not appear and the user could still submit the form. I believe that this is because the imputs are using classes from tailwind elements and are somehow blocking this functionality. This would need further investigation.
 
-    ![screenshot](documentation/unfixed-bug01.png)
+- If you have your user name and password stored in your cache the tailwind elements form inputs helper text sits over the input cached text. This I believe is a design flaw in tailwind elements.
 
-    - When applying required to the code for the forms in game name and game genre, the required text box did not appear and the user could still submit the form.
-
-- For PP3, when using a helper `clear()` function, any text above the height of the terminal does not clear, and remains when you scroll up.
-
-    ![screenshot](documentation/unfixed-bug02.png)
+    ![screenshot](documentation/testing/bugs/bug-login-fields.png)
 
     - Attempted fix: I tried to adjust the terminal size, but it only resizes the actual terminal, not the allowable area for text.
 
