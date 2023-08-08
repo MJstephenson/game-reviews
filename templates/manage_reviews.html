@@ -10,7 +10,7 @@
     <div class="px-4 md:px-0 lg:w-6/12 h-auto {% if review_count == 1 %}h-screen{% else %}h-auto{% endif %}">
         {% for review in reviews %}
         <div
-            class="my-8 border border-gray-300 p-4 w-5/6 mx-auto hover:scale-105 shadow-xl overflow-x-hidden overflow-wrap">
+            class="my-8 border border-gray-300 p-4 w-5/6 mx-auto hover:scale-105 shadow-xl overflow-x-hidden overflow-wrap max-h-[600px]">
             <h2 class="text-2xl font-bold capitalize">{{ review.game_name }}</h2>
             <p class="text-gray-500"><span>Publisher: </span>{{ review.publisher }}</p>
             <p class="text-gray-500"><span>Developer: </span>{{ review.developer }}</p>
